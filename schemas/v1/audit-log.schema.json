@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forensic-crawler.invalid/schemas/v1/audit-log.schema.json",
+  "title": "Forensic Crawler Audit Log v1",
+  "type": "array",
+  "items": {
+    "$ref": "forensic-package.schema.json#/$defs/auditEvent"
+  }
+}

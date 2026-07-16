@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forensic-crawler.invalid/schemas/v1/source-registry.schema.json",
+  "title": "Forensic Crawler Source Registry v1",
+  "type": "array",
+  "items": {
+    "$ref": "forensic-package.schema.json#/$defs/sourceRegistryEntry"
+  }
+}

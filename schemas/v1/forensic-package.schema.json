@@ -1,0 +1,605 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forensic-crawler.invalid/schemas/v1/forensic-package.schema.json",
+  "title": "Forensic Crawler Package v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packageType",
+    "packageId",
+    "exportedAt",
+    "exportProfile",
+    "investigations",
+    "events",
+    "claims",
+    "claimRevisions",
+    "sources",
+    "sourceSnapshots",
+    "sourceRegistryEntries",
+    "assets",
+    "assetCaptures",
+    "assetTransformations",
+    "entities",
+    "observations",
+    "temporalAnchors",
+    "spatialAnchors",
+    "claimSourceRelationships",
+    "assetSourceRelationships",
+    "contradictions",
+    "rightsDecisions",
+    "confidenceAssessments",
+    "reconstructionElements",
+    "reconstructionRevisions",
+    "expertCandidates",
+    "interviews",
+    "consentRecords",
+    "editorialReviews",
+    "corrections",
+    "exports",
+    "importRuns",
+    "auditEvents"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "packageType": { "const": "forensic_workspace" },
+    "packageId": { "$ref": "#/$defs/id" },
+    "exportedAt": { "$ref": "#/$defs/timestamp" },
+    "exportProfile": {
+      "enum": ["private_workspace", "restricted_review", "public_candidate"]
+    },
+    "investigations": { "type": "array", "items": { "$ref": "#/$defs/investigation" } },
+    "events": { "type": "array", "items": { "$ref": "#/$defs/event" } },
+    "claims": { "type": "array", "items": { "$ref": "#/$defs/claim" } },
+    "claimRevisions": { "type": "array", "items": { "$ref": "#/$defs/claimRevision" } },
+    "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+    "sourceSnapshots": { "type": "array", "items": { "$ref": "#/$defs/sourceSnapshot" } },
+    "sourceRegistryEntries": { "type": "array", "items": { "$ref": "#/$defs/sourceRegistryEntry" } },
+    "assets": { "type": "array", "items": { "$ref": "#/$defs/asset" } },
+    "assetCaptures": { "type": "array", "items": { "$ref": "#/$defs/assetCapture" } },
+    "assetTransformations": { "type": "array", "items": { "$ref": "#/$defs/assetTransformation" } },
+    "entities": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+    "observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } },
+    "temporalAnchors": { "type": "array", "items": { "$ref": "#/$defs/temporalAnchor" } },
+    "spatialAnchors": { "type": "array", "items": { "$ref": "#/$defs/spatialAnchor" } },
+    "claimSourceRelationships": { "type": "array", "items": { "$ref": "#/$defs/claimSourceRelationship" } },
+    "assetSourceRelationships": { "type": "array", "items": { "$ref": "#/$defs/assetSourceRelationship" } },
+    "contradictions": { "type": "array", "items": { "$ref": "#/$defs/contradiction" } },
+    "rightsDecisions": { "type": "array", "items": { "$ref": "#/$defs/rightsDecision" } },
+    "confidenceAssessments": { "type": "array", "items": { "$ref": "#/$defs/confidenceAssessment" } },
+    "reconstructionElements": { "type": "array", "items": { "$ref": "#/$defs/reconstructionElement" } },
+    "reconstructionRevisions": { "type": "array", "items": { "$ref": "#/$defs/reconstructionRevision" } },
+    "expertCandidates": { "type": "array", "items": { "$ref": "#/$defs/expertCandidate" } },
+    "interviews": { "type": "array", "items": { "$ref": "#/$defs/interview" } },
+    "consentRecords": { "type": "array", "items": { "$ref": "#/$defs/consentRecord" } },
+    "editorialReviews": { "type": "array", "items": { "$ref": "#/$defs/editorialReview" } },
+    "corrections": { "type": "array", "items": { "$ref": "#/$defs/correction" } },
+    "exports": { "type": "array", "items": { "$ref": "#/$defs/exportRecord" } },
+    "importRuns": { "type": "array", "items": { "$ref": "#/$defs/importRun" } },
+    "auditEvents": { "type": "array", "items": { "$ref": "#/$defs/auditEvent" } }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^fc_[a-z]+_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$"
+    },
+    "httpsUrl": { "type": "string", "pattern": "^https://" },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {
+          "enum": ["page", "paragraph", "section", "exhibit", "frame", "timestamp", "row", "url_fragment", "other"]
+        },
+        "value": { "type": "string", "minLength": 1 },
+        "label": { "type": "string" }
+      }
+    },
+    "evidenceState": {
+      "enum": [
+        "directly_observed_primary_evidence",
+        "authenticated_official_record",
+        "independently_corroborated",
+        "attributed_unverified",
+        "disputed",
+        "contradicted",
+        "inferred",
+        "interpolated",
+        "unresolved",
+        "superseded",
+        "retracted"
+      ]
+    },
+    "relationshipFunction": {
+      "enum": [
+        "supports",
+        "contradicts",
+        "contextualizes",
+        "authenticates",
+        "derives_from",
+        "depicts",
+        "contains_response",
+        "establishes_time",
+        "establishes_location",
+        "transforms",
+        "supersedes"
+      ]
+    },
+    "investigation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "slug", "title", "status", "purpose", "createdAt", "updatedAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "title": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["working", "under_review", "paused", "closed", "superseded"] },
+        "purpose": { "type": "string", "minLength": 1 },
+        "scope": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "$ref": "#/$defs/timestamp" },
+        "updatedAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "title", "description", "entityIds", "temporalAnchorIds", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "entityIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "temporalAnchorIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "currentRevisionId", "entityIds", "evidenceState", "proceduralStatus", "confidenceAssessmentIds", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "currentRevisionId": { "$ref": "#/$defs/id" },
+        "entityIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "evidenceState": { "$ref": "#/$defs/evidenceState" },
+        "proceduralStatus": { "type": ["string", "null"] },
+        "confidenceAssessmentIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "unresolvedQuestions": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "claimRevision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "claimId", "revisionNumber", "text", "claimant", "changeReason", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "claimId": { "$ref": "#/$defs/id" },
+        "revisionNumber": { "type": "integer", "minimum": 1 },
+        "text": { "type": "string", "minLength": 1 },
+        "claimant": { "type": "string", "minLength": 1 },
+        "changeReason": { "type": "string" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "registryEntryId", "title", "publisher", "sourceType", "canonicalUrl", "retrievedAt", "lastCheckedAt", "rightsDecisionId", "locators", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "registryEntryId": { "$ref": "#/$defs/id" },
+        "title": { "type": "string" },
+        "publisher": { "type": "string" },
+        "author": { "type": ["string", "null"] },
+        "publishedAt": { "type": ["string", "null"] },
+        "sourceType": { "enum": ["official_report", "official_web_record", "policy", "dataset", "article", "media", "other"] },
+        "canonicalUrl": { "$ref": "#/$defs/httpsUrl" },
+        "retrievedAt": { "$ref": "#/$defs/timestamp" },
+        "lastCheckedAt": { "$ref": "#/$defs/timestamp" },
+        "rightsDecisionId": { "$ref": "#/$defs/id" },
+        "locators": { "type": "array", "items": { "$ref": "#/$defs/locator" } },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "sourceSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sourceId", "checkedAt", "url", "httpStatus", "contentHash", "storageState", "limitations", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "sourceId": { "$ref": "#/$defs/id" },
+        "checkedAt": { "$ref": "#/$defs/timestamp" },
+        "url": { "$ref": "#/$defs/httpsUrl" },
+        "httpStatus": { "type": ["integer", "null"], "minimum": 100, "maximum": 599 },
+        "contentHash": { "oneOf": [{ "$ref": "#/$defs/hash" }, { "type": "null" }] },
+        "storageState": { "enum": ["link_only", "metadata_only", "quarantined", "restricted_bytes", "permitted_bytes", "withdrawn"] },
+        "limitations": { "type": "string" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "sourceRegistryEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "displayName", "canonicalOrigin", "allowedPaths", "purpose", "accessClass", "status", "rightsMode", "storageMode", "networkUseApproved", "ownerRole", "reviewedAt", "expiresAt", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "displayName": { "type": "string" },
+        "canonicalOrigin": { "$ref": "#/$defs/httpsUrl" },
+        "allowedPaths": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+        "purpose": { "type": "string" },
+        "accessClass": { "enum": ["public_unauthenticated", "manual_metadata_only", "denied"] },
+        "status": { "enum": ["proposed", "approved_metadata_only", "approved", "paused", "expired", "denied", "revoked"] },
+        "rightsMode": { "enum": ["government_work_review", "open_license_review", "licensed", "link_only", "unknown", "denied"] },
+        "storageMode": { "enum": ["no_bytes", "restrained_excerpt", "restricted_bytes", "permitted_bytes"] },
+        "networkUseApproved": { "type": "boolean" },
+        "ownerRole": { "type": "string" },
+        "reviewedAt": { "$ref": "#/$defs/timestamp" },
+        "expiresAt": { "$ref": "#/$defs/timestamp" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "title", "mediaType", "sourceIds", "rightsDecisionId", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "title": { "type": "string" },
+        "mediaType": { "enum": ["document", "image", "video", "audio", "dataset", "diagram", "other"] },
+        "sourceIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "rightsDecisionId": { "$ref": "#/$defs/id" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "assetCapture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "assetId", "capturedAt", "acquisitionMethod", "softwareVersion", "sha256", "byteSize", "mimeType", "storageState", "localPath", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "assetId": { "$ref": "#/$defs/id" },
+        "capturedAt": { "$ref": "#/$defs/timestamp" },
+        "acquisitionMethod": { "type": "string" },
+        "softwareVersion": { "type": "string" },
+        "sha256": { "$ref": "#/$defs/hash" },
+        "byteSize": { "type": "integer", "minimum": 0 },
+        "mimeType": { "type": "string" },
+        "storageState": { "enum": ["restricted", "permitted", "withdrawn"] },
+        "localPath": { "type": "string", "pattern": "^fixtures/" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "assetTransformation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "assetId", "inputCaptureId", "outputCaptureId", "method", "softwareVersion", "parameters", "operator", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "assetId": { "$ref": "#/$defs/id" },
+        "inputCaptureId": { "$ref": "#/$defs/id" },
+        "outputCaptureId": { "$ref": "#/$defs/id" },
+        "method": { "type": "string" },
+        "softwareVersion": { "type": "string" },
+        "parameters": { "type": "object" },
+        "operator": { "type": "string" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "canonicalName", "entityType", "aliases", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "canonicalName": { "type": "string" },
+        "entityType": { "enum": ["person", "organization", "vehicle", "place", "object", "concept", "other"] },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "description", "evidenceState", "sourceId", "assetId", "entityIds", "locators", "temporalAnchorIds", "spatialAnchorIds", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "description": { "type": "string" },
+        "evidenceState": { "$ref": "#/$defs/evidenceState" },
+        "sourceId": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+        "assetId": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+        "entityIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "locators": { "type": "array", "items": { "$ref": "#/$defs/locator" } },
+        "temporalAnchorIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "spatialAnchorIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "temporalAnchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "label", "originalExpression", "normalizedUtc", "missionElapsedSeconds", "timeSystem", "precisionSeconds", "uncertaintyLowerSeconds", "uncertaintyUpperSeconds", "conversionRationale", "sourceId", "locator", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "label": { "type": "string" },
+        "originalExpression": { "type": "string" },
+        "normalizedUtc": { "oneOf": [{ "$ref": "#/$defs/timestamp" }, { "type": "null" }] },
+        "missionElapsedSeconds": { "type": ["number", "null"], "minimum": 0 },
+        "timeSystem": { "enum": ["utc", "gmt", "mission_elapsed_time", "local_civil", "device_clock", "frame_timecode", "unknown"] },
+        "precisionSeconds": { "type": "number", "minimum": 0 },
+        "uncertaintyLowerSeconds": { "type": "number", "minimum": 0 },
+        "uncertaintyUpperSeconds": { "type": "number", "minimum": 0 },
+        "conversionRationale": { "type": "string" },
+        "sourceId": { "$ref": "#/$defs/id" },
+        "locator": { "$ref": "#/$defs/locator" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "spatialAnchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "label", "geometry", "crs", "uncertaintyMeters", "method", "sourceRelationshipIds", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "label": { "type": "string" },
+        "geometry": { "type": "object" },
+        "crs": { "type": "string" },
+        "uncertaintyMeters": { "type": "number", "minimum": 0 },
+        "method": { "type": "string" },
+        "sourceRelationshipIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "claimSourceRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "claimId", "sourceId", "sourceSnapshotId", "function", "locator", "rationale", "independenceNote", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "claimId": { "$ref": "#/$defs/id" },
+        "sourceId": { "$ref": "#/$defs/id" },
+        "sourceSnapshotId": { "$ref": "#/$defs/id" },
+        "function": { "$ref": "#/$defs/relationshipFunction" },
+        "locator": { "$ref": "#/$defs/locator" },
+        "rationale": { "type": "string" },
+        "independenceNote": { "type": "string" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "assetSourceRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "assetId", "sourceId", "function", "locator", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "assetId": { "$ref": "#/$defs/id" },
+        "sourceId": { "$ref": "#/$defs/id" },
+        "function": { "$ref": "#/$defs/relationshipFunction" },
+        "locator": { "$ref": "#/$defs/locator" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "contradiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "title", "claimIds", "temporalAnchorIds", "description", "magnitudeSeconds", "status", "alternateExplanations", "reviewStatus", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "title": { "type": "string" },
+        "claimIds": { "type": "array", "items": { "$ref": "#/$defs/id" }, "minItems": 2 },
+        "temporalAnchorIds": { "type": "array", "items": { "$ref": "#/$defs/id" }, "minItems": 2 },
+        "description": { "type": "string" },
+        "magnitudeSeconds": { "type": ["number", "null"], "minimum": 0 },
+        "status": { "enum": ["open", "explained", "resolved", "superseded"] },
+        "alternateExplanations": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "reviewStatus": { "enum": ["working", "reviewed", "approved"] },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "rightsDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "subjectType", "subjectId", "rightsStatus", "storagePermission", "displayPermission", "exportPermission", "rationale", "reviewedAt", "reviewerRole", "basisUrls", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "subjectType": { "enum": ["source", "asset", "capture", "export"] },
+        "subjectId": { "$ref": "#/$defs/id" },
+        "rightsStatus": { "enum": ["government_work_review", "open_license", "licensed", "fair_use_candidate", "ordinary_copyright", "unknown", "restricted", "project_authored"] },
+        "storagePermission": { "enum": ["link_only", "metadata_only", "restrained_excerpt", "restricted_bytes", "permitted_bytes"] },
+        "displayPermission": { "enum": ["private_metadata", "private_excerpt", "private_bytes", "public_candidate", "denied"] },
+        "exportPermission": { "enum": ["metadata_only", "restrained_excerpt", "licensed_bytes", "project_bytes", "denied"] },
+        "rationale": { "type": "string" },
+        "reviewedAt": { "$ref": "#/$defs/timestamp" },
+        "reviewerRole": { "type": "string" },
+        "basisUrls": { "type": "array", "items": { "$ref": "#/$defs/httpsUrl" } },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "confidenceAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "subjectType", "subjectId", "descriptor", "lowerBound", "upperBound", "method", "rationale", "uncertainty", "assessedAt", "assessorRole", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "subjectType": { "enum": ["claim", "observation", "temporal_anchor", "spatial_anchor", "reconstruction_element"] },
+        "subjectId": { "$ref": "#/$defs/id" },
+        "descriptor": { "enum": ["not_assessed", "low", "moderate", "high"] },
+        "lowerBound": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "upperBound": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "method": { "type": "string" },
+        "rationale": { "type": "string" },
+        "uncertainty": { "type": "array", "items": { "type": "string" } },
+        "assessedAt": { "$ref": "#/$defs/timestamp" },
+        "assessorRole": { "type": "string" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "reconstructionElement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "label", "elementClass", "observationIds", "assetTransformationIds", "currentRevisionId", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "label": { "type": "string" },
+        "elementClass": { "enum": ["observed", "corroborated_inference", "disputed", "interpolated", "illustrative"] },
+        "observationIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "assetTransformationIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "currentRevisionId": { "$ref": "#/$defs/id" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "reconstructionRevision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "elementId", "revisionNumber", "method", "parameters", "inputIds", "outputHash", "uncertainty", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "elementId": { "$ref": "#/$defs/id" },
+        "revisionNumber": { "type": "integer", "minimum": 1 },
+        "method": { "type": "string" },
+        "parameters": { "type": "object" },
+        "inputIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "outputHash": { "$ref": "#/$defs/hash" },
+        "uncertainty": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "expertCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "name", "publicProfileUrl", "fitRationale", "conflicts", "status", "reviewedAt", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "name": { "type": "string" },
+        "publicProfileUrl": { "$ref": "#/$defs/httpsUrl" },
+        "fitRationale": { "type": "string" },
+        "conflicts": { "type": "array", "items": { "type": "string" } },
+        "status": { "enum": ["research_lead", "verified_route", "proposed", "outreach_approved", "contacted", "declined", "consented", "closed"] },
+        "reviewedAt": { "$ref": "#/$defs/timestamp" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "interview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "expertCandidateId", "status", "consentRecordId", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "expertCandidateId": { "$ref": "#/$defs/id" },
+        "status": { "enum": ["planned", "approved", "scheduled", "completed", "declined", "withdrawn"] },
+        "consentRecordId": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "consentRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "interviewId", "status", "terms", "recordedAt", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "interviewId": { "$ref": "#/$defs/id" },
+        "status": { "enum": ["draft", "granted", "limited", "withdrawn", "expired"] },
+        "terms": { "type": "array", "items": { "type": "string" } },
+        "recordedAt": { "$ref": "#/$defs/timestamp" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "editorialReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "reviewType", "subjectIds", "findings", "limitations", "reviewedAt", "reviewerRole", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "reviewType": { "enum": ["source", "rights", "forensic", "editorial", "security", "accessibility", "corrections"] },
+        "subjectIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "findings": { "type": "array", "items": { "type": "string" } },
+        "limitations": { "type": "array", "items": { "type": "string" } },
+        "reviewedAt": { "$ref": "#/$defs/timestamp" },
+        "reviewerRole": { "type": "string" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "subjectIds", "requestedAt", "status", "summary", "disposition", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "subjectIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "requestedAt": { "$ref": "#/$defs/timestamp" },
+        "status": { "enum": ["requested", "under_review", "accepted", "partially_accepted", "rejected", "withdrawn"] },
+        "summary": { "type": "string" },
+        "disposition": { "type": ["string", "null"] },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "exportRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "exportType", "audience", "includesRestricted", "recordIds", "generatedAt", "packageHash", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "exportType": { "enum": ["private_json", "restricted_report", "public_candidate"] },
+        "audience": { "type": "string" },
+        "includesRestricted": { "type": "boolean" },
+        "recordIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "generatedAt": { "$ref": "#/$defs/timestamp" },
+        "packageHash": { "$ref": "#/$defs/hash" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "importRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "inputHash", "schemaVersion", "toolVersion", "importedAt", "result", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "inputHash": { "$ref": "#/$defs/hash" },
+        "schemaVersion": { "type": "string" },
+        "toolVersion": { "type": "string" },
+        "importedAt": { "$ref": "#/$defs/timestamp" },
+        "result": { "enum": ["accepted", "rejected", "accepted_with_warnings"] },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "auditEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "investigationId", "sequence", "eventType", "actorType", "actorId", "occurredAt", "subjectIds", "details", "previousHash", "eventHash", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "investigationId": { "$ref": "#/$defs/id" },
+        "sequence": { "type": "integer", "minimum": 1 },
+        "eventType": { "type": "string", "minLength": 1 },
+        "actorType": { "enum": ["human_role", "local_tool", "service_identity"] },
+        "actorId": { "type": "string", "minLength": 1 },
+        "occurredAt": { "$ref": "#/$defs/timestamp" },
+        "subjectIds": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "details": { "type": "object" },
+        "previousHash": { "oneOf": [{ "$ref": "#/$defs/hash" }, { "type": "null" }] },
+        "eventHash": { "$ref": "#/$defs/hash" },
+        "createdAt": { "$ref": "#/$defs/timestamp" }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "differenceSeconds": 3.1,
+  "fixtureNotice": "Locally authored metadata-only comparison; no NASA source bytes are stored.",
+  "sourceValues": [
+    {
+      "missionElapsedSeconds": 369939.9,
+      "missionElapsedTime": "102:45:39.9",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "missionElapsedSeconds": 369943,
+      "missionElapsedTime": "102:45:43",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002"
+    }
+  ]
+}

@@ -1,0 +1,996 @@
+{
+  "assetCaptures": [
+    {
+      "acquisitionMethod": "local human-authored metadata fixture",
+      "assetId": "fc_ast_00000000-0000-4000-8000-000000000001",
+      "byteSize": 471,
+      "capturedAt": "2026-07-16T20:15:00Z",
+      "createdAt": "2026-07-16T20:15:00Z",
+      "id": "fc_cap_00000000-0000-4000-8000-000000000001",
+      "localPath": "fixtures/pilots/apollo-11-landing/local/touchdown-times.input.json",
+      "mimeType": "application/json",
+      "sha256": "5cde33cd18b71cfc5b9de8616092bfdde92d9687d24cef166501da424f984f63",
+      "softwareVersion": "forensic-crawler-fixture/1.0.0",
+      "storageState": "permitted"
+    },
+    {
+      "acquisitionMethod": "deterministic JSON canonicalization",
+      "assetId": "fc_ast_00000000-0000-4000-8000-000000000001",
+      "byteSize": 471,
+      "capturedAt": "2026-07-16T20:15:01Z",
+      "createdAt": "2026-07-16T20:15:01Z",
+      "id": "fc_cap_00000000-0000-4000-8000-000000000002",
+      "localPath": "fixtures/pilots/apollo-11-landing/local/touchdown-times.canonical.json",
+      "mimeType": "application/json",
+      "sha256": "10d7f00cd8f79952f79ec4aa553a3c79bf7c4f58cb18c2b36d60082837257e54",
+      "softwareVersion": "forensic-crawler-canonical-json/1.0.0",
+      "storageState": "permitted"
+    }
+  ],
+  "assetSourceRelationships": [
+    {
+      "assetId": "fc_ast_00000000-0000-4000-8000-000000000001",
+      "createdAt": "2026-07-16T20:15:00Z",
+      "function": "derives_from",
+      "id": "fc_asrel_00000000-0000-4000-8000-000000000001",
+      "locator": {
+        "kind": "section",
+        "label": "Source value 102:45:39.9",
+        "value": "5.4 Landing Dynamics"
+      },
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "assetId": "fc_ast_00000000-0000-4000-8000-000000000001",
+      "createdAt": "2026-07-16T20:15:00Z",
+      "function": "derives_from",
+      "id": "fc_asrel_00000000-0000-4000-8000-000000000002",
+      "locator": {
+        "kind": "row",
+        "label": "Source value 102:45:43",
+        "value": "Lunar Landing Time"
+      },
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002"
+    }
+  ],
+  "assetTransformations": [
+    {
+      "assetId": "fc_ast_00000000-0000-4000-8000-000000000001",
+      "createdAt": "2026-07-16T20:15:01Z",
+      "id": "fc_xfm_00000000-0000-4000-8000-000000000001",
+      "inputCaptureId": "fc_cap_00000000-0000-4000-8000-000000000001",
+      "method": "sort object keys and ID-bearing arrays; preserve numeric values",
+      "operator": "local deterministic tool design",
+      "outputCaptureId": "fc_cap_00000000-0000-4000-8000-000000000002",
+      "parameters": {
+        "indentSpaces": 2,
+        "trailingNewline": true
+      },
+      "softwareVersion": "forensic-crawler-canonical-json/1.0.0"
+    }
+  ],
+  "assets": [
+    {
+      "createdAt": "2026-07-16T20:15:00Z",
+      "id": "fc_ast_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "mediaType": "dataset",
+      "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000004",
+      "sourceIds": [
+        "fc_src_00000000-0000-4000-8000-000000000001",
+        "fc_src_00000000-0000-4000-8000-000000000002"
+      ],
+      "title": "Locally authored touchdown-time comparison"
+    }
+  ],
+  "auditEvents": [
+    {
+      "actorId": "source-reconciliation-editor",
+      "actorType": "human_role",
+      "createdAt": "2026-07-16T20:00:00Z",
+      "details": {
+        "networkUse": "manual research only",
+        "rawBytesRetained": false
+      },
+      "eventHash": "5357ac2c7fffc82c3c7c0b5562e20b0b6d80307015e9f16db98ad821891f1999",
+      "eventType": "source_scope_reviewed",
+      "id": "fc_aud_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "occurredAt": "2026-07-16T20:00:00Z",
+      "previousHash": null,
+      "sequence": 1,
+      "subjectIds": [
+        "fc_src_00000000-0000-4000-8000-000000000001",
+        "fc_src_00000000-0000-4000-8000-000000000002",
+        "fc_src_00000000-0000-4000-8000-000000000003"
+      ]
+    },
+    {
+      "actorId": "forensic-crawler-fixture/1.0.0",
+      "actorType": "local_tool",
+      "createdAt": "2026-07-16T20:15:00Z",
+      "details": {
+        "differenceSeconds": 3.1,
+        "sourceBodiesCopied": false
+      },
+      "eventHash": "894efd8238b9722a55cd478d4290b244cb737a955718f9de4dc4376965c969ad",
+      "eventType": "metadata_fixture_created",
+      "id": "fc_aud_00000000-0000-4000-8000-000000000002",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "occurredAt": "2026-07-16T20:15:00Z",
+      "previousHash": "5357ac2c7fffc82c3c7c0b5562e20b0b6d80307015e9f16db98ad821891f1999",
+      "sequence": 2,
+      "subjectIds": [
+        "fc_ast_00000000-0000-4000-8000-000000000001",
+        "fc_cap_00000000-0000-4000-8000-000000000001",
+        "fc_cap_00000000-0000-4000-8000-000000000002",
+        "fc_xfm_00000000-0000-4000-8000-000000000001"
+      ]
+    },
+    {
+      "actorId": "temporal-reconstruction-analyst",
+      "actorType": "human_role",
+      "createdAt": "2026-07-16T20:20:00Z",
+      "details": {
+        "differenceSeconds": 3.1,
+        "preferredExactTime": null
+      },
+      "eventHash": "db504de9be87f8d10781158001af292ac86a9f82cb33ed781dcbf13b6d73f484",
+      "eventType": "temporal_discrepancy_recorded",
+      "id": "fc_aud_00000000-0000-4000-8000-000000000003",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "occurredAt": "2026-07-16T20:20:00Z",
+      "previousHash": "894efd8238b9722a55cd478d4290b244cb737a955718f9de4dc4376965c969ad",
+      "sequence": 3,
+      "subjectIds": [
+        "fc_ctr_00000000-0000-4000-8000-000000000001",
+        "fc_tmp_00000000-0000-4000-8000-000000000001",
+        "fc_tmp_00000000-0000-4000-8000-000000000002"
+      ]
+    },
+    {
+      "actorId": "rights-privacy-compliance-editor",
+      "actorType": "human_role",
+      "createdAt": "2026-07-16T20:20:00Z",
+      "details": {
+        "exportProfile": "private_workspace",
+        "remoteBytesRetained": false
+      },
+      "eventHash": "e10595a409d7b0e332e409765d3b7550adcdc8d9215db0ad57f768f4eb444894",
+      "eventType": "rights_review_recorded",
+      "id": "fc_aud_00000000-0000-4000-8000-000000000004",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "occurredAt": "2026-07-16T20:20:00Z",
+      "previousHash": "db504de9be87f8d10781158001af292ac86a9f82cb33ed781dcbf13b6d73f484",
+      "sequence": 4,
+      "subjectIds": [
+        "fc_rev_00000000-0000-4000-8000-000000000001",
+        "fc_rgt_00000000-0000-4000-8000-000000000001",
+        "fc_rgt_00000000-0000-4000-8000-000000000002",
+        "fc_rgt_00000000-0000-4000-8000-000000000003",
+        "fc_rgt_00000000-0000-4000-8000-000000000004"
+      ]
+    },
+    {
+      "actorId": "forensic-crawler-package/1.0.0",
+      "actorType": "local_tool",
+      "createdAt": "2026-07-16T20:30:00Z",
+      "details": {
+        "schemaVersion": "1.0.0",
+        "status": "working"
+      },
+      "eventHash": "7c7c91ba9046fe6a7bd50adbbf4c91f44af89465c7896755f9342b73a48a45e9",
+      "eventType": "working_package_assembled",
+      "id": "fc_aud_00000000-0000-4000-8000-000000000005",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "occurredAt": "2026-07-16T20:30:00Z",
+      "previousHash": "e10595a409d7b0e332e409765d3b7550adcdc8d9215db0ad57f768f4eb444894",
+      "sequence": 5,
+      "subjectIds": [
+        "fc_pkg_00000000-0000-4000-8000-000000000001",
+        "fc_inv_00000000-0000-4000-8000-000000000001"
+      ]
+    }
+  ],
+  "claimRevisions": [
+    {
+      "changeReason": "Initial normalized synthesis with discrepancy preserved.",
+      "claimId": "fc_clm_00000000-0000-4000-8000-000000000001",
+      "claimant": "Forensic Crawler working analysis",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "id": "fc_clmr_00000000-0000-4000-8000-000000000001",
+      "revisionNumber": 1,
+      "text": "Two official NASA records report that Eagle landed on the lunar surface; their exact recorded mission elapsed times differ by 3.1 seconds."
+    },
+    {
+      "changeReason": "Initial source claim transcription.",
+      "claimId": "fc_clm_00000000-0000-4000-8000-000000000002",
+      "claimant": "Apollo 11 Mission Report",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "id": "fc_clmr_00000000-0000-4000-8000-000000000002",
+      "revisionNumber": 1,
+      "text": "The Apollo 11 Mission Report records landing on the surface at mission elapsed time 102:45:39.9."
+    },
+    {
+      "changeReason": "Initial source claim transcription.",
+      "claimId": "fc_clm_00000000-0000-4000-8000-000000000003",
+      "claimant": "NASA Record of Lunar Events",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "id": "fc_clmr_00000000-0000-4000-8000-000000000003",
+      "revisionNumber": 1,
+      "text": "NASA's Record of Lunar Events lists lunar landing at mission elapsed time 102:45:43 and 20:17:43 GMT on July 20, 1969."
+    },
+    {
+      "changeReason": "Initial source claim transcription.",
+      "claimId": "fc_clm_00000000-0000-4000-8000-000000000004",
+      "claimant": "NASA Record of Lunar Events",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "id": "fc_clmr_00000000-0000-4000-8000-000000000004",
+      "revisionNumber": 1,
+      "text": "NASA's Record of Lunar Events lists Armstrong on the lunar surface at mission elapsed time 109:24:15 and 02:56:15 GMT on July 21, 1969."
+    }
+  ],
+  "claimSourceRelationships": [
+    {
+      "claimId": "fc_clm_00000000-0000-4000-8000-000000000001",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "function": "supports",
+      "id": "fc_rel_00000000-0000-4000-8000-000000000001",
+      "independenceNote": "Same agency as the second record and potentially derived from shared mission data; not counted as fully independent corroboration.",
+      "locator": {
+        "kind": "section",
+        "label": "Landing occurrence",
+        "value": "5.4 Landing Dynamics"
+      },
+      "rationale": "The official mission report states that landing on the surface occurred.",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000001",
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "claimId": "fc_clm_00000000-0000-4000-8000-000000000001",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "function": "supports",
+      "id": "fc_rel_00000000-0000-4000-8000-000000000002",
+      "independenceNote": "Same agency and event; useful corroborating record but not presumed independent of mission telemetry or reporting workflow.",
+      "locator": {
+        "kind": "row",
+        "label": "Landing occurrence",
+        "value": "Lunar Landing Time"
+      },
+      "rationale": "The official event record lists a lunar landing time.",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "claimId": "fc_clm_00000000-0000-4000-8000-000000000002",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "function": "establishes_time",
+      "id": "fc_rel_00000000-0000-4000-8000-000000000003",
+      "independenceNote": "Direct attribution to this source only.",
+      "locator": {
+        "kind": "section",
+        "label": "102:45:39.9",
+        "value": "5.4 Landing Dynamics"
+      },
+      "rationale": "The source explicitly records the mission elapsed time.",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000001",
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "claimId": "fc_clm_00000000-0000-4000-8000-000000000003",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "function": "establishes_time",
+      "id": "fc_rel_00000000-0000-4000-8000-000000000004",
+      "independenceNote": "Direct attribution to this source only.",
+      "locator": {
+        "kind": "row",
+        "label": "102:45:43 / 20:17:43 GMT",
+        "value": "Lunar Landing Time"
+      },
+      "rationale": "The source explicitly records both mission elapsed and GMT time.",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "claimId": "fc_clm_00000000-0000-4000-8000-000000000004",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "function": "establishes_time",
+      "id": "fc_rel_00000000-0000-4000-8000-000000000005",
+      "independenceNote": "Direct attribution to this source only.",
+      "locator": {
+        "kind": "row",
+        "label": "109:24:15 / 02:56:15 GMT",
+        "value": "Armstrong on Lunar Surface"
+      },
+      "rationale": "The source explicitly records the first-step event time.",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000002"
+    }
+  ],
+  "claims": [
+    {
+      "confidenceAssessmentIds": [
+        "fc_cfd_00000000-0000-4000-8000-000000000001"
+      ],
+      "createdAt": "2026-07-16T20:10:00Z",
+      "currentRevisionId": "fc_clmr_00000000-0000-4000-8000-000000000001",
+      "entityIds": [
+        "fc_ent_00000000-0000-4000-8000-000000000001",
+        "fc_ent_00000000-0000-4000-8000-000000000002"
+      ],
+      "evidenceState": "authenticated_official_record",
+      "id": "fc_clm_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "proceduralStatus": null,
+      "unresolvedQuestions": [
+        "Which timing and clock-reference conventions explain the 3.1-second difference between the two official records?"
+      ]
+    },
+    {
+      "confidenceAssessmentIds": [],
+      "createdAt": "2026-07-16T20:10:00Z",
+      "currentRevisionId": "fc_clmr_00000000-0000-4000-8000-000000000002",
+      "entityIds": [
+        "fc_ent_00000000-0000-4000-8000-000000000001",
+        "fc_ent_00000000-0000-4000-8000-000000000002"
+      ],
+      "evidenceState": "authenticated_official_record",
+      "id": "fc_clm_00000000-0000-4000-8000-000000000002",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "proceduralStatus": null,
+      "unresolvedQuestions": []
+    },
+    {
+      "confidenceAssessmentIds": [],
+      "createdAt": "2026-07-16T20:10:00Z",
+      "currentRevisionId": "fc_clmr_00000000-0000-4000-8000-000000000003",
+      "entityIds": [
+        "fc_ent_00000000-0000-4000-8000-000000000001",
+        "fc_ent_00000000-0000-4000-8000-000000000002"
+      ],
+      "evidenceState": "authenticated_official_record",
+      "id": "fc_clm_00000000-0000-4000-8000-000000000003",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "proceduralStatus": null,
+      "unresolvedQuestions": []
+    },
+    {
+      "confidenceAssessmentIds": [],
+      "createdAt": "2026-07-16T20:10:00Z",
+      "currentRevisionId": "fc_clmr_00000000-0000-4000-8000-000000000004",
+      "entityIds": [
+        "fc_ent_00000000-0000-4000-8000-000000000001",
+        "fc_ent_00000000-0000-4000-8000-000000000003"
+      ],
+      "evidenceState": "authenticated_official_record",
+      "id": "fc_clm_00000000-0000-4000-8000-000000000004",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "proceduralStatus": null,
+      "unresolvedQuestions": []
+    }
+  ],
+  "confidenceAssessments": [
+    {
+      "assessedAt": "2026-07-16T20:20:00Z",
+      "assessorRole": "claims and status editor",
+      "createdAt": "2026-07-16T20:20:00Z",
+      "descriptor": "high",
+      "id": "fc_cfd_00000000-0000-4000-8000-000000000001",
+      "lowerBound": null,
+      "method": "qualitative source convergence review",
+      "rationale": "Two official NASA records expressly represent a landing event. They are not presumed independent, and the exact event second remains unresolved.",
+      "subjectId": "fc_clm_00000000-0000-4000-8000-000000000001",
+      "subjectType": "claim",
+      "uncertainty": [
+        "Shared institutional source lineage",
+        "Different reported mission elapsed seconds",
+        "No independent clock-method review in this fixture"
+      ],
+      "upperBound": null
+    }
+  ],
+  "consentRecords": [],
+  "contradictions": [
+    {
+      "alternateExplanations": [
+        "Different definitions of first surface contact versus recorded landing event",
+        "Clock-source or synchronization differences",
+        "Later administrative rounding or transcription",
+        "A reporting convention not yet documented in the reviewed locators"
+      ],
+      "claimIds": [
+        "fc_clm_00000000-0000-4000-8000-000000000002",
+        "fc_clm_00000000-0000-4000-8000-000000000003"
+      ],
+      "createdAt": "2026-07-16T20:20:00Z",
+      "description": "The mission report lists 102:45:39.9 while the event record lists 102:45:43. The records differ by 3.1 seconds but agree that the landing occurred.",
+      "id": "fc_ctr_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "magnitudeSeconds": 3.1,
+      "reviewStatus": "working",
+      "status": "open",
+      "temporalAnchorIds": [
+        "fc_tmp_00000000-0000-4000-8000-000000000001",
+        "fc_tmp_00000000-0000-4000-8000-000000000002"
+      ],
+      "title": "Touchdown mission-time discrepancy"
+    }
+  ],
+  "corrections": [],
+  "editorialReviews": [
+    {
+      "createdAt": "2026-07-16T20:20:00Z",
+      "findings": [
+        "Metadata and restrained factual excerpts are sufficient for the pilot.",
+        "No NASA PDF, image, audio, video, logo, or insignia is stored.",
+        "NASA third-party and identifiable-person exceptions remain item-specific."
+      ],
+      "id": "fc_rev_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "limitations": [
+        "This is a working compliance review, not qualified legal advice."
+      ],
+      "reviewType": "rights",
+      "reviewedAt": "2026-07-16T20:20:00Z",
+      "reviewerRole": "rights privacy and compliance editor",
+      "subjectIds": [
+        "fc_src_00000000-0000-4000-8000-000000000001",
+        "fc_src_00000000-0000-4000-8000-000000000002",
+        "fc_src_00000000-0000-4000-8000-000000000003",
+        "fc_ast_00000000-0000-4000-8000-000000000001"
+      ]
+    },
+    {
+      "createdAt": "2026-07-16T20:20:00Z",
+      "findings": [
+        "The records agree that landing occurred and differ on the recorded mission elapsed second.",
+        "The discrepancy is not evidence of misconduct or falsification.",
+        "Alternate clock and reporting explanations remain unresolved."
+      ],
+      "id": "fc_rev_00000000-0000-4000-8000-000000000002",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "limitations": [
+        "No underlying mission clock or telemetry methodology was independently reconstructed."
+      ],
+      "reviewType": "editorial",
+      "reviewedAt": "2026-07-16T20:20:00Z",
+      "reviewerRole": "corrections and red-team editor",
+      "subjectIds": [
+        "fc_clm_00000000-0000-4000-8000-000000000001",
+        "fc_ctr_00000000-0000-4000-8000-000000000001"
+      ]
+    },
+    {
+      "createdAt": "2026-07-16T20:20:00Z",
+      "findings": [
+        "The arithmetic difference is 3.1 seconds.",
+        "Displayed precision is recorded separately from accuracy.",
+        "The 2D marker is illustrative and exposes both inputs."
+      ],
+      "id": "fc_rev_00000000-0000-4000-8000-000000000003",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "limitations": [
+        "No claim is made about the physically exact moment of first contact."
+      ],
+      "reviewType": "forensic",
+      "reviewedAt": "2026-07-16T20:20:00Z",
+      "reviewerRole": "temporal reconstruction analyst",
+      "subjectIds": [
+        "fc_tmp_00000000-0000-4000-8000-000000000001",
+        "fc_tmp_00000000-0000-4000-8000-000000000002",
+        "fc_rec_00000000-0000-4000-8000-000000000001"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "aliases": [
+        "NASA"
+      ],
+      "canonicalName": "National Aeronautics and Space Administration",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "entityType": "organization",
+      "id": "fc_ent_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "aliases": [
+        "Eagle",
+        "LM-5"
+      ],
+      "canonicalName": "Apollo 11 Lunar Module Eagle",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "entityType": "vehicle",
+      "id": "fc_ent_00000000-0000-4000-8000-000000000002",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Neil Armstrong",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "entityType": "person",
+      "id": "fc_ent_00000000-0000-4000-8000-000000000003",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001"
+    }
+  ],
+  "events": [
+    {
+      "createdAt": "2026-07-16T20:10:00Z",
+      "description": "Official NASA records agree that Eagle landed but list mission elapsed times that differ by 3.1 seconds.",
+      "entityIds": [
+        "fc_ent_00000000-0000-4000-8000-000000000001",
+        "fc_ent_00000000-0000-4000-8000-000000000002"
+      ],
+      "id": "fc_evt_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "temporalAnchorIds": [
+        "fc_tmp_00000000-0000-4000-8000-000000000001",
+        "fc_tmp_00000000-0000-4000-8000-000000000002"
+      ],
+      "title": "Lunar Module landing"
+    },
+    {
+      "createdAt": "2026-07-16T20:10:00Z",
+      "description": "NASA's Record of Lunar Events lists Armstrong on the lunar surface at 109:24:15 mission elapsed time and 02:56:15 GMT on July 21, 1969.",
+      "entityIds": [
+        "fc_ent_00000000-0000-4000-8000-000000000001",
+        "fc_ent_00000000-0000-4000-8000-000000000003"
+      ],
+      "id": "fc_evt_00000000-0000-4000-8000-000000000002",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "temporalAnchorIds": [
+        "fc_tmp_00000000-0000-4000-8000-000000000003"
+      ],
+      "title": "Armstrong on the lunar surface"
+    }
+  ],
+  "expertCandidates": [],
+  "exportProfile": "private_workspace",
+  "exportedAt": "2026-07-16T20:30:00Z",
+  "exports": [],
+  "importRuns": [
+    {
+      "createdAt": "2026-07-16T20:15:00Z",
+      "id": "fc_run_00000000-0000-4000-8000-000000000001",
+      "importedAt": "2026-07-16T20:15:00Z",
+      "inputHash": "5cde33cd18b71cfc5b9de8616092bfdde92d9687d24cef166501da424f984f63",
+      "result": "accepted_with_warnings",
+      "schemaVersion": "1.0.0",
+      "toolVersion": "forensic-crawler-fixture/1.0.0"
+    }
+  ],
+  "interviews": [],
+  "investigations": [
+    {
+      "createdAt": "2026-07-16T20:00:00Z",
+      "id": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "purpose": "Demonstrate provenance, exact locators, temporal uncertainty, rights review, contradiction handling, and deterministic export using metadata-only official records.",
+      "scope": [
+        "Apollo 11 lunar landing timing",
+        "official NASA records only",
+        "metadata and restrained quotation only",
+        "no source-body retention"
+      ],
+      "slug": "apollo-11-landing-time",
+      "status": "working",
+      "title": "Apollo 11 landing-time reconciliation",
+      "updatedAt": "2026-07-16T20:30:00Z"
+    }
+  ],
+  "observations": [
+    {
+      "assetId": null,
+      "createdAt": "2026-07-16T20:10:00Z",
+      "description": "The Mission Report text states that landing on the surface occurred at 102:45:39.9 mission elapsed time.",
+      "entityIds": [
+        "fc_ent_00000000-0000-4000-8000-000000000001",
+        "fc_ent_00000000-0000-4000-8000-000000000002"
+      ],
+      "evidenceState": "authenticated_official_record",
+      "id": "fc_obs_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "locators": [
+        {
+          "kind": "section",
+          "label": "Landing time sentence",
+          "value": "5.4 Landing Dynamics"
+        }
+      ],
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000001",
+      "spatialAnchorIds": [],
+      "temporalAnchorIds": [
+        "fc_tmp_00000000-0000-4000-8000-000000000001"
+      ]
+    },
+    {
+      "assetId": null,
+      "createdAt": "2026-07-16T20:10:00Z",
+      "description": "The Record of Lunar Events lists Lunar Landing Time at 102:45:43 mission elapsed time and 20:17:43 GMT on July 20, 1969.",
+      "entityIds": [
+        "fc_ent_00000000-0000-4000-8000-000000000001",
+        "fc_ent_00000000-0000-4000-8000-000000000002"
+      ],
+      "evidenceState": "authenticated_official_record",
+      "id": "fc_obs_00000000-0000-4000-8000-000000000002",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "locators": [
+        {
+          "kind": "row",
+          "label": "Landing row",
+          "value": "Lunar Landing Time"
+        }
+      ],
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
+      "spatialAnchorIds": [],
+      "temporalAnchorIds": [
+        "fc_tmp_00000000-0000-4000-8000-000000000002"
+      ]
+    },
+    {
+      "assetId": null,
+      "createdAt": "2026-07-16T20:10:00Z",
+      "description": "The Record of Lunar Events lists Armstrong on the lunar surface at 109:24:15 mission elapsed time and 02:56:15 GMT on July 21, 1969.",
+      "entityIds": [
+        "fc_ent_00000000-0000-4000-8000-000000000001",
+        "fc_ent_00000000-0000-4000-8000-000000000003"
+      ],
+      "evidenceState": "authenticated_official_record",
+      "id": "fc_obs_00000000-0000-4000-8000-000000000003",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "locators": [
+        {
+          "kind": "row",
+          "label": "First-step row",
+          "value": "Armstrong on Lunar Surface"
+        }
+      ],
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
+      "spatialAnchorIds": [],
+      "temporalAnchorIds": [
+        "fc_tmp_00000000-0000-4000-8000-000000000003"
+      ]
+    }
+  ],
+  "packageId": "fc_pkg_00000000-0000-4000-8000-000000000001",
+  "packageType": "forensic_workspace",
+  "reconstructionElements": [
+    {
+      "assetTransformationIds": [
+        "fc_xfm_00000000-0000-4000-8000-000000000001"
+      ],
+      "createdAt": "2026-07-16T20:20:00Z",
+      "currentRevisionId": "fc_recr_00000000-0000-4000-8000-000000000001",
+      "elementClass": "disputed",
+      "id": "fc_rec_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "label": "Touchdown time comparison marker",
+      "observationIds": [
+        "fc_obs_00000000-0000-4000-8000-000000000001",
+        "fc_obs_00000000-0000-4000-8000-000000000002"
+      ]
+    }
+  ],
+  "reconstructionRevisions": [
+    {
+      "createdAt": "2026-07-16T20:20:00Z",
+      "elementId": "fc_rec_00000000-0000-4000-8000-000000000001",
+      "id": "fc_recr_00000000-0000-4000-8000-000000000001",
+      "inputIds": [
+        "fc_tmp_00000000-0000-4000-8000-000000000001",
+        "fc_tmp_00000000-0000-4000-8000-000000000002",
+        "fc_cap_00000000-0000-4000-8000-000000000002"
+      ],
+      "method": "two-source temporal comparison; no spatial reconstruction",
+      "outputHash": "10d7f00cd8f79952f79ec4aa553a3c79bf7c4f58cb18c2b36d60082837257e54",
+      "parameters": {
+        "display": "separate markers with a labeled 3.1-second interval",
+        "selectionRule": "do not choose a preferred exact second"
+      },
+      "revisionNumber": 1,
+      "uncertainty": [
+        "Source clock and reporting conventions not reconciled",
+        "Precision is not equivalent to timing accuracy",
+        "Marker is illustrative and not a recording"
+      ]
+    }
+  ],
+  "rightsDecisions": [
+    {
+      "basisUrls": [
+        "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf"
+      ],
+      "createdAt": "2026-07-16T20:05:00Z",
+      "displayPermission": "private_excerpt",
+      "exportPermission": "restrained_excerpt",
+      "id": "fc_rgt_00000000-0000-4000-8000-000000000001",
+      "rationale": "Official NASA report used as metadata and locator. No PDF bytes are committed. NASA media guidance and item-specific third-party exceptions remain applicable.",
+      "reviewedAt": "2026-07-16T20:05:00Z",
+      "reviewerRole": "rights privacy and compliance editor",
+      "rightsStatus": "government_work_review",
+      "storagePermission": "link_only",
+      "subjectId": "fc_src_00000000-0000-4000-8000-000000000001",
+      "subjectType": "source"
+    },
+    {
+      "basisUrls": [
+        "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "https://www.nasa.gov/wp-content/uploads/static/history/ap11ann/ap11events.html"
+      ],
+      "createdAt": "2026-07-16T20:05:00Z",
+      "displayPermission": "private_excerpt",
+      "exportPermission": "restrained_excerpt",
+      "id": "fc_rgt_00000000-0000-4000-8000-000000000002",
+      "rationale": "Official NASA event metadata and restrained factual transcription only; no remote page body retained.",
+      "reviewedAt": "2026-07-16T20:05:00Z",
+      "reviewerRole": "rights privacy and compliance editor",
+      "rightsStatus": "government_work_review",
+      "storagePermission": "metadata_only",
+      "subjectId": "fc_src_00000000-0000-4000-8000-000000000002",
+      "subjectType": "source"
+    },
+    {
+      "basisUrls": [
+        "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      ],
+      "createdAt": "2026-07-16T20:05:00Z",
+      "displayPermission": "private_metadata",
+      "exportPermission": "metadata_only",
+      "id": "fc_rgt_00000000-0000-4000-8000-000000000003",
+      "rationale": "Policy locator retained to document that NASA logos, identifiers, third-party works, and identifiable-person uses require separate treatment.",
+      "reviewedAt": "2026-07-16T20:05:00Z",
+      "reviewerRole": "rights privacy and compliance editor",
+      "rightsStatus": "government_work_review",
+      "storagePermission": "metadata_only",
+      "subjectId": "fc_src_00000000-0000-4000-8000-000000000003",
+      "subjectType": "source"
+    },
+    {
+      "basisUrls": [
+        "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf",
+        "https://www.nasa.gov/wp-content/uploads/static/history/ap11ann/ap11events.html"
+      ],
+      "createdAt": "2026-07-16T20:15:00Z",
+      "displayPermission": "private_bytes",
+      "exportPermission": "project_bytes",
+      "id": "fc_rgt_00000000-0000-4000-8000-000000000004",
+      "rationale": "Locally authored metadata comparison with source attribution; no copied NASA source body or media.",
+      "reviewedAt": "2026-07-16T20:15:00Z",
+      "reviewerRole": "rights privacy and compliance editor",
+      "rightsStatus": "project_authored",
+      "storagePermission": "permitted_bytes",
+      "subjectId": "fc_ast_00000000-0000-4000-8000-000000000001",
+      "subjectType": "asset"
+    }
+  ],
+  "schemaVersion": "1.0.0",
+  "sourceRegistryEntries": [
+    {
+      "accessClass": "manual_metadata_only",
+      "allowedPaths": [
+        "/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf"
+      ],
+      "canonicalOrigin": "https://www.nasa.gov",
+      "createdAt": "2026-07-16T20:00:00Z",
+      "displayName": "NASA Apollo 11 Mission Report locator",
+      "expiresAt": "2026-10-14T20:00:00Z",
+      "id": "fc_reg_00000000-0000-4000-8000-000000000001",
+      "networkUseApproved": false,
+      "ownerRole": "rights and source review",
+      "purpose": "Manual metadata-only pilot review of landing-time statements.",
+      "reviewedAt": "2026-07-16T20:00:00Z",
+      "rightsMode": "government_work_review",
+      "status": "approved_metadata_only",
+      "storageMode": "no_bytes"
+    },
+    {
+      "accessClass": "manual_metadata_only",
+      "allowedPaths": [
+        "/wp-content/uploads/static/history/ap11ann/ap11events.html"
+      ],
+      "canonicalOrigin": "https://www.nasa.gov",
+      "createdAt": "2026-07-16T20:00:00Z",
+      "displayName": "NASA Apollo 11 Record of Lunar Events locator",
+      "expiresAt": "2026-10-14T20:00:00Z",
+      "id": "fc_reg_00000000-0000-4000-8000-000000000002",
+      "networkUseApproved": false,
+      "ownerRole": "rights and source review",
+      "purpose": "Manual metadata-only pilot review of lunar-event time rows.",
+      "reviewedAt": "2026-07-16T20:00:00Z",
+      "rightsMode": "government_work_review",
+      "status": "approved_metadata_only",
+      "storageMode": "no_bytes"
+    },
+    {
+      "accessClass": "manual_metadata_only",
+      "allowedPaths": [
+        "/nasa-brand-center/images-and-media/"
+      ],
+      "canonicalOrigin": "https://www.nasa.gov",
+      "createdAt": "2026-07-16T20:00:00Z",
+      "displayName": "NASA media usage policy locator",
+      "expiresAt": "2026-10-14T20:00:00Z",
+      "id": "fc_reg_00000000-0000-4000-8000-000000000003",
+      "networkUseApproved": false,
+      "ownerRole": "rights and source review",
+      "purpose": "Manual policy review for rights and attribution boundaries.",
+      "reviewedAt": "2026-07-16T20:00:00Z",
+      "rightsMode": "government_work_review",
+      "status": "approved_metadata_only",
+      "storageMode": "no_bytes"
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "checkedAt": "2026-07-16T20:00:00Z",
+      "contentHash": null,
+      "createdAt": "2026-07-16T20:00:00Z",
+      "httpStatus": null,
+      "id": "fc_snap_00000000-0000-4000-8000-000000000001",
+      "limitations": "Manual locator review through an official web source; response status and remote bytes were not captured by an approved acquisition tool.",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000001",
+      "storageState": "link_only",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf"
+    },
+    {
+      "checkedAt": "2026-07-16T20:00:00Z",
+      "contentHash": null,
+      "createdAt": "2026-07-16T20:00:00Z",
+      "httpStatus": null,
+      "id": "fc_snap_00000000-0000-4000-8000-000000000002",
+      "limitations": "Manual locator review; no remote body retained and no acquisition response metadata claimed.",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
+      "storageState": "metadata_only",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/history/ap11ann/ap11events.html"
+    },
+    {
+      "checkedAt": "2026-07-16T20:00:00Z",
+      "contentHash": null,
+      "createdAt": "2026-07-16T20:00:00Z",
+      "httpStatus": null,
+      "id": "fc_snap_00000000-0000-4000-8000-000000000003",
+      "limitations": "Policy metadata only; third-party and identifiable-person exceptions require item-specific review.",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000003",
+      "storageState": "metadata_only",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  ],
+  "sources": [
+    {
+      "author": null,
+      "canonicalUrl": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf",
+      "createdAt": "2026-07-16T20:00:00Z",
+      "id": "fc_src_00000000-0000-4000-8000-000000000001",
+      "lastCheckedAt": "2026-07-16T20:00:00Z",
+      "locators": [
+        {
+          "kind": "section",
+          "label": "Landing time statement",
+          "value": "5.4 Landing Dynamics"
+        },
+        {
+          "kind": "page",
+          "label": "Landing dynamics page",
+          "value": "Report page 5-14"
+        }
+      ],
+      "publishedAt": "1969-11",
+      "publisher": "National Aeronautics and Space Administration",
+      "registryEntryId": "fc_reg_00000000-0000-4000-8000-000000000001",
+      "retrievedAt": "2026-07-16T20:00:00Z",
+      "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000001",
+      "sourceType": "official_report",
+      "title": "Apollo 11 Mission Report"
+    },
+    {
+      "author": null,
+      "canonicalUrl": "https://www.nasa.gov/wp-content/uploads/static/history/ap11ann/ap11events.html",
+      "createdAt": "2026-07-16T20:00:00Z",
+      "id": "fc_src_00000000-0000-4000-8000-000000000002",
+      "lastCheckedAt": "2026-07-16T20:00:00Z",
+      "locators": [
+        {
+          "kind": "row",
+          "label": "Landing row",
+          "value": "Lunar Landing Time"
+        },
+        {
+          "kind": "row",
+          "label": "First-step row",
+          "value": "Armstrong on Lunar Surface"
+        }
+      ],
+      "publishedAt": "1969-07-24",
+      "publisher": "National Aeronautics and Space Administration",
+      "registryEntryId": "fc_reg_00000000-0000-4000-8000-000000000002",
+      "retrievedAt": "2026-07-16T20:00:00Z",
+      "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000002",
+      "sourceType": "official_web_record",
+      "title": "Apollo 11 Record of Lunar Events"
+    },
+    {
+      "author": null,
+      "canonicalUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "createdAt": "2026-07-16T20:00:00Z",
+      "id": "fc_src_00000000-0000-4000-8000-000000000003",
+      "lastCheckedAt": "2026-07-16T20:00:00Z",
+      "locators": [
+        {
+          "kind": "section",
+          "label": "General media guidance and exceptions",
+          "value": "NASA Images and Media Usage Guidelines"
+        }
+      ],
+      "publishedAt": null,
+      "publisher": "National Aeronautics and Space Administration",
+      "registryEntryId": "fc_reg_00000000-0000-4000-8000-000000000003",
+      "retrievedAt": "2026-07-16T20:00:00Z",
+      "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000003",
+      "sourceType": "policy",
+      "title": "NASA Images and Media Usage Guidelines"
+    }
+  ],
+  "spatialAnchors": [],
+  "temporalAnchors": [
+    {
+      "conversionRationale": "Mission elapsed time converted arithmetically to seconds. Decimal precision reflects the source notation, not independently validated clock accuracy. UTC is not inferred from this record alone.",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "id": "fc_tmp_00000000-0000-4000-8000-000000000001",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "label": "Mission Report touchdown time",
+      "locator": {
+        "kind": "section",
+        "label": "Landing time sentence",
+        "value": "5.4 Landing Dynamics"
+      },
+      "missionElapsedSeconds": 369939.9,
+      "normalizedUtc": null,
+      "originalExpression": "102:45:39.9",
+      "precisionSeconds": 0.1,
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000001",
+      "timeSystem": "mission_elapsed_time",
+      "uncertaintyLowerSeconds": 0.05,
+      "uncertaintyUpperSeconds": 0.05
+    },
+    {
+      "conversionRationale": "Mission elapsed and GMT values are transcribed from the same official event row. GMT is represented as UTC for the fixture; stated uncertainty reflects displayed whole-second precision only.",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "id": "fc_tmp_00000000-0000-4000-8000-000000000002",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "label": "Record of Lunar Events touchdown time",
+      "locator": {
+        "kind": "row",
+        "label": "Landing row",
+        "value": "Lunar Landing Time"
+      },
+      "missionElapsedSeconds": 369943,
+      "normalizedUtc": "1969-07-20T20:17:43Z",
+      "originalExpression": "102:45:43 / 20:17:43 GMT 20 July 1969",
+      "precisionSeconds": 1,
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
+      "timeSystem": "mission_elapsed_time",
+      "uncertaintyLowerSeconds": 0.5,
+      "uncertaintyUpperSeconds": 0.5
+    },
+    {
+      "conversionRationale": "Mission elapsed and GMT values are transcribed from NASA's event row. GMT is represented as UTC; uncertainty reflects displayed precision, not independent clock validation.",
+      "createdAt": "2026-07-16T20:10:00Z",
+      "id": "fc_tmp_00000000-0000-4000-8000-000000000003",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "label": "Armstrong on lunar surface",
+      "locator": {
+        "kind": "row",
+        "label": "First-step row",
+        "value": "Armstrong on Lunar Surface"
+      },
+      "missionElapsedSeconds": 393855,
+      "normalizedUtc": "1969-07-21T02:56:15Z",
+      "originalExpression": "109:24:15 / 02:56:15 GMT 21 July 1969",
+      "precisionSeconds": 1,
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
+      "timeSystem": "mission_elapsed_time",
+      "uncertaintyLowerSeconds": 0.5,
+      "uncertaintyUpperSeconds": 0.5
+    }
+  ]
+}

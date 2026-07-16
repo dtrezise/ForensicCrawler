@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forensic-crawler.invalid/schemas/v1/export-manifest.schema.json",
+  "title": "Forensic Crawler Export Manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifestVersion", "schemaVersion", "packageId", "packageFile", "packageSha256", "generatedBy", "generatedAt", "exportProfile"],
+  "properties": {
+    "manifestVersion": { "const": "1.0.0" },
+    "schemaVersion": { "const": "1.0.0" },
+    "packageId": {
+      "type": "string",
+      "pattern": "^fc_[a-z]+_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "packageFile": { "type": "string", "pattern": "^[A-Za-z0-9._-]+\\.json$" },
+    "packageSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "generatedBy": { "type": "string" },
+    "generatedAt": { "type": "string" },
+    "exportProfile": { "enum": ["private_workspace", "restricted_review", "public_candidate"] }
+  }
+}
