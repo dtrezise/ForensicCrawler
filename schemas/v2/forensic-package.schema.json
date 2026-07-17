@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forensic-crawler.local/schemas/v2/forensic-package.schema.json",
+  "title": "Forensic Crawler Package v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "packageType", "packageId", "exportedAt", "exportProfile",
+    "investigations", "events", "claims", "claimRevisions", "sources", "sourceSnapshots",
+    "sourceRegistryEntries", "assets", "assetCaptures", "assetTransformations", "entities",
+    "observations", "temporalAnchors", "spatialAnchors", "claimSourceRelationships",
+    "assetSourceRelationships", "contradictions", "rightsDecisions", "confidenceAssessments",
+    "reconstructionElements", "reconstructionRevisions", "expertCandidates", "interviews",
+    "consentRecords", "editorialReviews", "corrections", "exports", "importRuns", "auditEvents",
+    "sourceAcquisitions", "sourceFamilies", "underlyingAssets", "transformationLedger",
+    "correctionLedger", "packageRevisions", "spatialArtifacts", "integritySummary", "methodology", "glossary"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "2.0.0" },
+    "packageType": { "type": "string", "minLength": 1 },
+    "packageId": { "$ref": "#/$defs/id" },
+    "exportedAt": { "$ref": "#/$defs/dateTime" },
+    "exportProfile": { "type": "string", "minLength": 1 },
+    "investigations": { "$ref": "#/$defs/records" },
+    "events": { "$ref": "#/$defs/records" },
+    "claims": { "$ref": "#/$defs/records" },
+    "claimRevisions": { "$ref": "#/$defs/records" },
+    "sources": { "$ref": "#/$defs/records" },
+    "sourceSnapshots": { "$ref": "#/$defs/records" },
+    "sourceRegistryEntries": { "$ref": "#/$defs/records" },
+    "assets": { "$ref": "#/$defs/records" },
+    "assetCaptures": { "$ref": "#/$defs/records" },
+    "assetTransformations": { "$ref": "#/$defs/records" },
+    "entities": { "$ref": "#/$defs/records" },
+    "observations": { "$ref": "#/$defs/records" },
+    "temporalAnchors": { "$ref": "#/$defs/records" },
+    "spatialAnchors": { "$ref": "#/$defs/records" },
+    "claimSourceRelationships": { "$ref": "#/$defs/records" },
+    "assetSourceRelationships": { "$ref": "#/$defs/records" },
+    "contradictions": { "$ref": "#/$defs/records" },
+    "rightsDecisions": { "$ref": "#/$defs/records" },
+    "confidenceAssessments": { "$ref": "#/$defs/records" },
+    "reconstructionElements": { "$ref": "#/$defs/records" },
+    "reconstructionRevisions": { "$ref": "#/$defs/records" },
+    "expertCandidates": { "$ref": "#/$defs/records" },
+    "interviews": { "$ref": "#/$defs/records" },
+    "consentRecords": { "$ref": "#/$defs/records" },
+    "editorialReviews": { "$ref": "#/$defs/records" },
+    "corrections": { "$ref": "#/$defs/records" },
+    "exports": { "$ref": "#/$defs/records" },
+    "importRuns": { "$ref": "#/$defs/records" },
+    "auditEvents": { "$ref": "#/$defs/records" },
+    "sourceAcquisitions": { "$ref": "#/$defs/records" },
+    "sourceFamilies": { "$ref": "#/$defs/records" },
+    "underlyingAssets": { "$ref": "#/$defs/records" },
+    "transformationLedger": { "$ref": "#/$defs/records" },
+    "correctionLedger": { "$ref": "#/$defs/records" },
+    "packageRevisions": { "$ref": "#/$defs/records" },
+    "spatialArtifacts": { "$ref": "#/$defs/records" },
+    "integritySummary": {
+      "type": "object",
+      "required": ["structuralValidation", "evidentiaryAuthentication", "sourceBodiesPreserved", "sourceBodiesNotPreserved", "confidenceCoverage", "locatorCoverage", "auditChainLinked", "signatureStatus", "warnings"],
+      "properties": {
+        "structuralValidation": { "type": "string" }, "evidentiaryAuthentication": { "type": "string" },
+        "sourceBodiesPreserved": { "type": "integer", "minimum": 0 }, "sourceBodiesNotPreserved": { "type": "integer", "minimum": 0 },
+        "confidenceCoverage": { "type": "boolean" }, "locatorCoverage": { "type": "boolean" }, "auditChainLinked": { "type": "boolean" },
+        "signatureStatus": { "type": "string" }, "warnings": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "methodology": {
+      "type": "object",
+      "required": ["scope", "researchCutoff", "inclusionRule", "exclusionRule", "sourceHierarchy"],
+      "properties": {
+        "scope": { "type": "array", "items": { "type": "string" } }, "researchCutoff": { "$ref": "#/$defs/dateTime" },
+        "inclusionRule": { "type": "string" }, "exclusionRule": { "type": "string" }, "sourceHierarchy": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "glossary": {
+      "type": "array",
+      "items": { "type": "object", "required": ["term", "definition"], "properties": { "term": { "type": "string" }, "definition": { "type": "string" } }, "additionalProperties": false }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^fc_[a-z]+_[A-Za-z0-9-]+$" },
+    "dateTime": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$" },
+    "records": { "type": "array", "items": { "type": "object" } }
+  }
+}

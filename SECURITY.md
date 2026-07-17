@@ -1,9 +1,9 @@
 # Forensic Crawler Security and Privacy Policy
 
-Status: WORKING - LOCAL PHASE 0/1 IMPLEMENTATION APPROVED; NETWORK USE AND DEPLOYMENT NOT APPROVED
-Last reviewed: 2026-07-16
+Status: WORKING - LOCAL IMPLEMENTATION AND CASE-BOUNDED MANUAL PUBLIC RESEARCH APPROVED; CRAWLER NETWORK USE AND DEPLOYMENT NOT APPROVED
+Last reviewed: 2026-07-17
 
-This policy is mandatory for Forensic Crawler. It applies to source code, infrastructure, crawler jobs, data, analysis, exports, accounts, vendors, and human workflows. The user's 2026-07-16 launch request authorizes reversible local Phase 0/1 implementation with synthetic or reviewed metadata-only fixtures. Live crawling, deployment, publication, external accounts, and outreach remain blocked until separately reviewed and explicitly approved.
+This policy is mandatory for Forensic Crawler. It applies to source code, infrastructure, crawler jobs, data, analysis, exports, accounts, vendors, and human workflows. The user's 2026-07-16 launch request authorizes reversible local implementation with synthetic or reviewed metadata-only fixtures. The 2026-07-17 case requests additionally authorize lawful manual research of public sources and private, project-authored schematic reconstructions of the Charlie Kirk assassination and Renee Good killing. Live crawler execution, authenticated or paid access, raw third-party body retention, deployment, publication, external accounts, and outreach remain blocked until separately reviewed and explicitly approved.
 
 ## Reporting a security or privacy issue
 

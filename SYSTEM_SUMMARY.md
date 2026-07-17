@@ -1,6 +1,6 @@
 # System Summary
 
-Status: WORKING v0.1
+Status: WORKING v0.2
 
 ## Definition
 
@@ -20,20 +20,20 @@ The long-range audience includes authorized journalists, researchers, legal team
 2. **Acquisition and custody:** allowed bytes are hashed, source-linked, rights-labeled, and recorded through append-only events.
 3. **Normalized evidence:** permanent records represent investigations, events, claims, sources, assets, time, space, contradictions, corrections, and reviews.
 4. **Analysis:** the workspace displays support, contradiction, context, authentication, and derivation without assigning automatic truth.
-5. **Reconstruction:** later 2D and 3D elements point to the observations and transformations that produced them and expose uncertainty.
+5. **Reconstruction:** 2D and 3D elements point to the observations and transformations that produced them and expose uncertainty; metric claims remain gated by calibration and validation.
 6. **Delivery:** deterministic private packages and human-readable reports enforce rights, privacy, status, and correction gates.
 
 ## Current vertical slice
 
-The local MVP demonstrates a metadata-only Apollo 11 landing-time review. It compares a mission elapsed time of `102:45:39.9` in the Apollo 11 Mission Report with `102:45:43` in NASA's Record of Lunar Events. The records agree that landing occurred but differ by 3.1 seconds, so the system presents a temporal discrepancy and possible clock or reporting explanations instead of choosing a hidden “correct” value.
+The local MVP retains the metadata-only Apollo 11 landing-time review, private Charlie Kirk assassination reconstruction, private Renee Good killing reconstruction, and private public-record reconstruction of the Operation Southern Spear vessel-strike campaign. Schema v2 adds acquisition records, source-family and underlying-asset lineage, locator review, ordinal confidence dimensions, transformation and revision ledgers, integrity summaries, methodology, glossary, local signed manifests, and a unified deterministic Markdown/PDF renderer. The analyst interface adds global search, cross-case comparison, direct artifact access, presentation mode, a resizable inspector, temporal scene states, and labeled semantic 3D layers. A synthetic controlled benchmark validates calibrated multi-view geometry and point-cloud, mesh, and Gaussian-splat interchange contracts. All case scenes remain relational and non-georeferenced; none claims photogrammetry, a camera solution, attack or collision dynamics, intent, trajectory, platform or munition identification, or court validation.
 
 ## Current boundaries
 
 - no live crawler or browser automation;
-- no copied NASA PDF, imagery, audio, or video;
+- no copied third-party PDF, article body, imagery, audio, video, court exhibit, or map pixels;
 - no social-media or authenticated source;
 - no public viewer, publication, outreach, or expert contact;
-- no 3D/VR/AR or mobile capture;
+- no event-specific metric photogrammetry, trained case Gaussian splat, VR/AR delivery, trajectory reconstruction, or mobile capture;
 - no biometric, identity, guilt, motive, or sensitive-trait inference; and
 - no court-admissibility, certification, or production-readiness claim.
 

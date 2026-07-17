@@ -20,11 +20,20 @@ Current local vertical slice:
 - versioned deterministic package and source registry;
 - normalized records and permanent IDs;
 - metadata-only NASA pilot;
+- metadata-only Charlie Kirk public-record case fixture;
+- metadata-only Renee Good public-record case fixture;
+- metadata-only Operation Southern Spear vessel-strike campaign fixture;
 - claim/source/asset relationships and exact locators;
 - timeline discrepancy and alternate-explanation view;
 - rights, provenance, correction, and export inspection;
-- deterministic import/export, report, audit, and link-policy tools; and
-- accessible responsive interface with automated tests.
+- deterministic import/export, report, audit, and link-policy tools;
+- accessible responsive interface with automated tests;
+- interactive schematic 3D scenes with explicit nonmetric and non-photogrammetric limits;
+- case-specific procedural posture, time-zone display, dignity boundaries, and reconstruction-layer semantics;
+- schema-v2 acquisition, source-family, underlying-asset, confidence, transformation, revision, methodology, glossary, and integrity records;
+- deterministic unified Markdown/PDF reports and locally signed/verified manifests;
+- global search, cross-case comparison, presentation mode, temporal scene states, semantic labels, and direct artifact links; and
+- a project-owned calibrated multi-view benchmark with point-cloud, mesh, Gaussian-splat interchange, validation metrics, and a recorded COLMAP readiness gate.
 
 Next network-gated work:
 
@@ -50,6 +59,8 @@ Next network-gated work:
 - observed/inferred/disputed/interpolated visibility toggles.
 
 ## Phase 4 - 3D reconstruction
+
+Current precursor: three project-authored relational Three.js scenes prove evidence-layer, contradiction, uncertainty, attributed-account, state-transition, semantic labeling, selection, and transformation UX without claiming metric reconstruction. A separate synthetic benchmark proves the calibrated geometry and artifact contracts without importing those capabilities into case evidence.
 
 - reviewed photogrammetry, multi-view geometry, depth estimation, and sensor fusion;
 - evidence-linked scene graph and camera solutions;

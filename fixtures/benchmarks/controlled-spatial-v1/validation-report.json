@@ -1,0 +1,204 @@
+{
+  "benchmarkId": "controlled-spatial-v1",
+  "cameraCenterErrorsMeters": [
+    0.001051071590391215,
+    0.0021014959164036093,
+    0.002697404508861562
+  ],
+  "cameraCount": 3,
+  "cameras": [
+    {
+      "centerErrorMeters": 0.001051071590391215,
+      "id": "camera-01",
+      "image": "fixtures/benchmarks/controlled-spatial-v1/images/camera-01.png",
+      "intrinsics": [
+        [
+          900.0,
+          0.0,
+          640.0
+        ],
+        [
+          0.0,
+          900.0,
+          480.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "knownCenterMeters": [
+        3.8,
+        -3.2,
+        2.3
+      ],
+      "poseRecovered": true,
+      "recoveredCenterMeters": [
+        3.800557913982888,
+        -3.200876225244419,
+        2.300160352102787
+      ],
+      "reprojectionRmsePixels": 0.2576387598911964,
+      "rotationWorldToCamera": [
+        [
+          0.6442448916942951,
+          0.7648192619929487,
+          -0.00012653207969348657
+        ],
+        [
+          0.26042308983587714,
+          -0.2195227291233796,
+          -0.9402072035878889
+        ],
+        [
+          -0.7191163562359992,
+          0.6056907361705185,
+          -0.3406029922227267
+        ]
+      ],
+      "translation": [
+        -0.00010718527661010754,
+        0.4702092128428792,
+        5.455225934544557
+      ]
+    },
+    {
+      "centerErrorMeters": 0.0021014959164036093,
+      "id": "camera-02",
+      "image": "fixtures/benchmarks/controlled-spatial-v1/images/camera-02.png",
+      "intrinsics": [
+        [
+          900.0,
+          0.0,
+          640.0
+        ],
+        [
+          0.0,
+          900.0,
+          480.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "knownCenterMeters": [
+        -3.4,
+        -2.8,
+        2.0
+      ],
+      "poseRecovered": true,
+      "recoveredCenterMeters": [
+        -3.400608776143817,
+        -2.799415969464357,
+        1.9980752701418596
+      ],
+      "reprojectionRmsePixels": 0.24303459498007504,
+      "rotationWorldToCamera": [
+        [
+          0.6355475126622958,
+          -0.7720617493444495,
+          -0.00011978295941528216
+        ],
+        [
+          -0.24865670498186682,
+          -0.20454289595060784,
+          -0.9467481432692116
+        ],
+        [
+          0.7309235269276327,
+          0.6017332124083955,
+          -0.3219750593886784
+        ]
+      ],
+      "translation": [
+        0.0001657940573291805,
+        0.4734892295459757,
+        4.813416928300224
+      ]
+    },
+    {
+      "centerErrorMeters": 0.002697404508861562,
+      "id": "camera-03",
+      "image": "fixtures/benchmarks/controlled-spatial-v1/images/camera-03.png",
+      "intrinsics": [
+        [
+          900.0,
+          0.0,
+          640.0
+        ],
+        [
+          0.0,
+          900.0,
+          480.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "knownCenterMeters": [
+        0.2,
+        4.6,
+        2.6
+      ],
+      "poseRecovered": true,
+      "recoveredCenterMeters": [
+        0.2013377691106541,
+        4.598302306520246,
+        2.6016137539278987
+      ],
+      "reprojectionRmsePixels": 0.2561491646987629,
+      "rotationWorldToCamera": [
+        [
+          -0.9990428112844507,
+          0.043743108499815136,
+          4.0983348552677684e-05
+        ],
+        [
+          0.018132434510251635,
+          0.4149764279208814,
+          -0.9096514602246056
+        ],
+        [
+          -0.03980798964520682,
+          -0.9087800089839121,
+          -0.4153723862170041
+        ]
+      ],
+      "translation": [
+        -0.00010560868229446165,
+        0.4547239406279711,
+        5.267498576242167
+      ]
+    }
+  ],
+  "controlDimensionsMeters": {
+    "x": 2.0,
+    "y": 1.5,
+    "z": 1.0
+  },
+  "coordinateSystem": "CONTROLLED_METRIC_V1",
+  "georeferenced": false,
+  "inputPointCount": 80,
+  "limitations": [
+    "Synthetic high-contrast control points are easier than real scenes.",
+    "The Gaussian-splat PLY is a viewer-contract derivative, not an optimized radiance-field training result.",
+    "No finding from this benchmark transfers accuracy to a case-specific reconstruction."
+  ],
+  "maximumPointErrorMeters": 0.002918503441605623,
+  "measurementEnabled": true,
+  "purpose": "Validate metric artifact and radiance-field derivative contracts before sensitive-case use.",
+  "reprojectionRmsePixels": [
+    0.2576387598911964,
+    0.24303459498007504,
+    0.2561491646987629
+  ],
+  "schemaVersion": "1.0.0",
+  "status": "passed",
+  "triangulationRmseMeters": 0.0015174234772470786,
+  "units": "meters"
+}

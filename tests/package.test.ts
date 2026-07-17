@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
 import fixture from "../fixtures/pilots/apollo-11-landing/forensic-package.json";
+import kirkFixture from "../fixtures/pilots/charlie-kirk-assassination/forensic-package.json";
+import goodFixture from "../fixtures/pilots/renee-good-killing/forensic-package.json";
+import vesselsFixture from "../fixtures/pilots/southern-spear-vessel-strikes/forensic-package.json";
 import { auditPackage, canonicalStringify, eventHash, sealAuditEvents, validatePackage } from "../scripts/lib.mjs";
 
 type JsonRecord = Record<string, unknown>;
@@ -11,6 +14,62 @@ function copy<T>(value: T): T {
 describe("forensic package", () => {
   it("validates against the versioned 2020-12 schema", () => {
     expect(validatePackage(fixture)).toEqual({ valid: true, errors: [] });
+    expect(validatePackage(kirkFixture)).toEqual({ valid: true, errors: [] });
+    expect(validatePackage(goodFixture)).toEqual({ valid: true, errors: [] });
+    expect(validatePackage(vesselsFixture)).toEqual({ valid: true, errors: [] });
+  });
+
+  it("audits the vessel-strike campaign fixture without inventing a complete ledger", () => {
+    const result = auditPackage(vesselsFixture as JsonRecord);
+    expect(result.valid, result.issues.join("\n")).toBe(true);
+    expect(result.counts.claims).toBe(24);
+    expect(result.counts.sources).toBe(20);
+    expect(result.counts.contradictions).toBe(7);
+    expect(vesselsFixture.investigations[0]!.status).toBe("working");
+    expect(vesselsFixture.claimRevisions.some((revision) => revision.text.includes("at least 66 vessels"))).toBe(true);
+    expect(vesselsFixture.claimRevisions.some((revision) => revision.text.includes("No single unqualified campaign death total"))).toBe(true);
+  });
+
+  it("keeps the vessel fixture metadata-only and the maritime scene non-operational", () => {
+    expect(vesselsFixture.sourceSnapshots.every((snapshot) => snapshot.contentHash === null && snapshot.httpStatus === null)).toBe(true);
+    expect(vesselsFixture.sourceRegistryEntries.every((entry) => entry.networkUseApproved === false && entry.storageMode === "no_bytes")).toBe(true);
+    expect(vesselsFixture.reconstructionRevisions.every((revision) => revision.parameters.metricClaim === false && revision.parameters.geospatialClaim === false)).toBe(true);
+    expect(vesselsFixture.editorialReviews.some((review) => review.findings.some((finding) => finding.includes("No platform, munition, route, target-recognition, impact, identity, cargo, or photogrammetric solve")))).toBe(true);
+  });
+
+  it("audits the Renee Good fixture while preserving disputed conduct and current posture", () => {
+    const result = auditPackage(goodFixture as JsonRecord);
+    expect(result.valid, result.issues.join("\n")).toBe(true);
+    expect(result.counts.claims).toBe(24);
+    expect(result.counts.sources).toBe(24);
+    expect(result.counts.contradictions).toBe(8);
+    expect(goodFixture.investigations[0]!.status).toBe("working");
+    expect(goodFixture.contradictions.some((item) => item.title === "Vehicle intent and weaponization")).toBe(true);
+    expect(goodFixture.claimRevisions.some((revision) => revision.text.includes("No state charge, state declination"))).toBe(true);
+  });
+
+  it("keeps the Good case metadata-only and the street scene non-metric", () => {
+    expect(goodFixture.sourceSnapshots.every((snapshot) => snapshot.contentHash === null && snapshot.httpStatus === null)).toBe(true);
+    expect(goodFixture.sourceRegistryEntries.every((entry) => entry.networkUseApproved === false && entry.storageMode === "no_bytes")).toBe(true);
+    expect(goodFixture.reconstructionRevisions.every((revision) => revision.parameters.metricClaim === false)).toBe(true);
+    expect(goodFixture.editorialReviews.some((review) => review.findings.some((finding) => finding.includes("No trajectory, collision, intent, identity, or clinical-causation solve")))).toBe(true);
+  });
+
+  it("audits the public-record assassination fixture without flattening its conflicts", () => {
+    const result = auditPackage(kirkFixture as JsonRecord);
+    expect(result.valid, result.issues.join("\n")).toBe(true);
+    expect(result.counts.claims).toBe(18);
+    expect(result.counts.sources).toBe(13);
+    expect(result.counts.contradictions).toBe(5);
+    expect(kirkFixture.investigations[0]!.status).toBe("working");
+    expect(kirkFixture.contradictions.some((item) => item.title === "Incident minute and timezone label")).toBe(true);
+  });
+
+  it("keeps the case metadata-only and the local scene explicitly non-photogrammetric", () => {
+    expect(kirkFixture.sourceSnapshots.every((snapshot) => snapshot.contentHash === null && snapshot.httpStatus === null)).toBe(true);
+    expect(kirkFixture.sourceRegistryEntries.every((entry) => entry.networkUseApproved === false && entry.storageMode === "no_bytes")).toBe(true);
+    expect(kirkFixture.reconstructionRevisions.every((revision) => revision.parameters.metricClaim === false)).toBe(true);
+    expect(kirkFixture.editorialReviews.some((review) => review.findings.some((finding) => finding.includes("No ballistic, acoustic, identity, or photogrammetric solve")))).toBe(true);
   });
 
   it("passes reference, rights, custody, and audit-chain checks", () => {

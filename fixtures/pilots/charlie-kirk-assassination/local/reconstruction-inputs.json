@@ -1,0 +1,43 @@
+{
+  "caseId": "fc_inv_00000000-0000-4000-8000-000000000065",
+  "coordinateSystem": "SCENE_FRAME_V1 relational local meters; not georeferenced",
+  "fixedFacts": [
+    "event outdoors in Fountain Courtyard / quad",
+    "Hall of Flags above and behind event region",
+    "alleged northeast roof departure",
+    "wooded recovery area described near campus"
+  ],
+  "prohibitedInferences": [
+    "identity from pixels",
+    "gait or face recognition",
+    "weapon effectiveness",
+    "tactical blind spots",
+    "exact wound path",
+    "motive from association"
+  ],
+  "schema": "forensic-crawler.reconstruction-inputs/1",
+  "sourceReportedValues": {
+    "eventToRoofExpressions": [
+      "approximately 160 yards",
+      "roughly 200 yards"
+    ],
+    "eventToRoofMeters": [
+      146.3,
+      182.9
+    ],
+    "timeExpressions": [
+      "approximately 12:20 p.m.",
+      "12:23 p.m."
+    ]
+  },
+  "unknowns": [
+    "geodetic origin",
+    "exact rooftop building",
+    "building heights",
+    "camera calibration",
+    "native clip timing",
+    "trajectory",
+    "survey control",
+    "original event-scene image rights"
+  ]
+}

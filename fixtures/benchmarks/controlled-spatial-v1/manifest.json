@@ -1,0 +1,48 @@
+{
+  "algorithm": "sha256",
+  "benchmarkId": "controlled-spatial-v1",
+  "files": [
+    {
+      "byteSize": 5504,
+      "path": "artifacts/controlled-gaussian-splat.ply",
+      "sha256": "543e75ee90d52d94f6105ede8547891b90bd7dac619a54d47d3d9410a5771e29"
+    },
+    {
+      "byteSize": 261,
+      "path": "artifacts/controlled-mesh.obj",
+      "sha256": "330c616c290f06377a150941d6d422af256e50e332ffd6e47e62b1d3f4793d2d"
+    },
+    {
+      "byteSize": 3812,
+      "path": "artifacts/controlled-point-cloud.ply",
+      "sha256": "6a1355803edd96f7f09f0236928b497e9c50707f95b384fb7816aecedc36d96c"
+    },
+    {
+      "byteSize": 740,
+      "path": "colmap-readiness.json",
+      "sha256": "15d748381c61c1573ac24948fcde1002f706ced71ef95a924a8d81d84e586eb9"
+    },
+    {
+      "byteSize": 12082,
+      "path": "images/camera-01.png",
+      "sha256": "aa9a9f4130afbce68aa4463759cb37d927ba790561fe0e7671958582ff1497cf"
+    },
+    {
+      "byteSize": 12118,
+      "path": "images/camera-02.png",
+      "sha256": "2217070f1a51e2a71d69485009c883d814ba15e0d6b182dcb02501e323b6ad1b"
+    },
+    {
+      "byteSize": 11946,
+      "path": "images/camera-03.png",
+      "sha256": "a7967eaf5b0490e4d13692733e5b949eb32f6dbb54c71f3684ccd2ba430e3e32"
+    },
+    {
+      "byteSize": 4646,
+      "path": "validation-report.json",
+      "sha256": "7d3a0c6c688fca368fa17415a9243dec24f1f10e1c5acde0f0cc4d491333e16d"
+    }
+  ],
+  "rootHash": "6d2ce80f25a55022a1a13d113ce541edc503d8dd2cdbaa2f1d7de6dba3b1b80d",
+  "schemaVersion": "1.0.0"
+}

@@ -1,0 +1,37 @@
+{
+  "controls": {
+    "georeferenced": false,
+    "graphicContentRetained": false,
+    "metricScale": false,
+    "munitionInference": false,
+    "personIdentification": false,
+    "platformInference": false,
+    "routeInference": false,
+    "sourcePixelsRetained": false
+  },
+  "coordinateSystem": "EVENT_LOCAL_V1",
+  "event": "June 21, 2026 public-release comparison cell",
+  "evidentiaryPurpose": "Visualize provenance, reported state transitions, survivor/SAR uncertainty, and unresolved maritime-zone hypotheses without depicting impact or operational targeting geometry.",
+  "investigationId": "fc_inv_00000000-0000-4000-8000-0000000001f5",
+  "schema": "forensic-crawler/reconstruction-inputs/1.0.0",
+  "sourceKeys": [
+    "lead_ig",
+    "southcom_jun21",
+    "dvids_jun21",
+    "ap_current",
+    "unclos_territorial",
+    "unclos_high_seas",
+    "noaa_zones"
+  ],
+  "unknowns": [
+    "strike coordinates",
+    "event time",
+    "true vessel dimensions",
+    "heading and speed",
+    "camera model and pose",
+    "platform and munition",
+    "cargo and occupant identities",
+    "final survivor outcome",
+    "maritime legal zone"
+  ]
+}

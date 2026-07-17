@@ -1,0 +1,31 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "byteSize": 347523,
+      "path": "forensic-package.json",
+      "sha256": "6d94b2c29c800fd8992e8d44f515dd1bb0078c2e80fa90bd0eaac8c077ba1177"
+    },
+    {
+      "byteSize": 1366,
+      "path": "local/reconstruction-inputs.json",
+      "sha256": "2d6e2210d16d74c21503d994859a454699b60e0801310c82b006f4f16ee2d78b"
+    },
+    {
+      "byteSize": 11879,
+      "path": "local/reconstruction-scene.json",
+      "sha256": "183cbac8332526ebcfb6d0f75cf54a204ad8792488f5b47308b475556c1ad472"
+    }
+  ],
+  "generatedAt": "2026-07-17T14:30:00Z",
+  "packageId": "fc_pkg_c4018df7-7b10-44c8-8a6f-811d1e2eab76",
+  "rootHash": "e2d78adb3fcd0a6b1ddc5e00704d12e3ca5c24830f9a7d5fe4213141cf4ebdc5",
+  "schemaVersion": "2.0.0",
+  "signature": {
+    "algorithm": "ed25519",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEARsTcOaKzvnVLiA8Xi0g1SGHUX655pXHDCh/EmfwJe+Q=\n-----END PUBLIC KEY-----\n",
+    "status": "locally_signed_untrusted_identity",
+    "trustedTimestamp": null,
+    "value": "Z/ivkqyliBGxpCEbGc3AN4afc881+J+CTFekwGPmmZkmv2dEq+PNCI254F1XWoKzVKAQEoCjtU+DArRpm9tfDA=="
+  }
+}

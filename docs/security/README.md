@@ -1,11 +1,11 @@
 # Security Foundation Review Packet
 
-Status: WORKING - LOCAL PHASE 0/1 IMPLEMENTATION APPROVED
-Prepared: 2026-07-16
+Status: WORKING - LOCAL IMPLEMENTATION AND CASE-BOUNDED MANUAL PUBLIC RESEARCH APPROVED
+Prepared: 2026-07-17
 
 ## Decision requested
 
-The user's 2026-07-16 launch request approved reversible local Phase 0/1 implementation against synthetic or specifically reviewed metadata-only fixtures. That approval is not approval to crawl a source, publish data, deploy, create accounts, contact anyone, or push changes; each remains a separate explicit decision.
+The user's 2026-07-16 launch request approved reversible local implementation against synthetic or specifically reviewed metadata-only fixtures. The 2026-07-17 case requests additionally approved lawful manual research of public sources and private schematic 3D presentations for the Charlie Kirk assassination and Renee Good killing. Neither approval permits crawler execution, authenticated or paid access, raw third-party body retention, publication, deployment, account creation, outreach, or push.
 
 ## Canonical workspace state
 
@@ -29,7 +29,7 @@ The approved-for-review security baseline narrows the first implementation phase
 4. provenance, retention, correction, and deletion controls; and
 5. private human review with no public output by default.
 
-Social-media ingestion, authenticated sources, outreach, automated publication, mobile capture, 3D reconstruction, biometric or precise-location processing, model training, public datasets, and court-admissibility claims are out of scope until separately reviewed and approved.
+Social-media ingestion, authenticated sources, outreach, automated publication, mobile capture, biometric or precise-location processing, model training, public datasets, and court-admissibility claims remain out of scope. A code-native relational 3D scene is approved only as a private schematic with no source pixels, identity analysis, georeference, trajectory, tactical optimization, or admissibility claim.
 
 ## Review artifacts
 

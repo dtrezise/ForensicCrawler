@@ -1,0 +1,486 @@
+{
+  "calibration": {
+    "cameraPose": false,
+    "georeference": false,
+    "metricScale": false,
+    "multiView": false,
+    "nativeClock": false,
+    "sensorModel": false
+  },
+  "cameraPresets": [
+    {
+      "id": "overview",
+      "label": "Event-cell overview",
+      "position": [
+        100,
+        -115,
+        88
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "source",
+      "label": "Source and vessel",
+      "position": [
+        62,
+        -82,
+        48
+      ],
+      "target": [
+        -8,
+        -6,
+        2
+      ]
+    },
+    {
+      "id": "survivor",
+      "label": "Survivor / SAR states",
+      "position": [
+        82,
+        -45,
+        52
+      ],
+      "target": [
+        22,
+        17,
+        0
+      ]
+    },
+    {
+      "id": "zones",
+      "label": "Maritime-zone hypotheses",
+      "position": [
+        40,
+        -105,
+        105
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "coordinateSystem": {
+    "georeferenced": false,
+    "id": "EVENT_LOCAL_V1",
+    "northAligned": false,
+    "origin": "Apparent vessel centroid in a selected pre-event publication frame",
+    "units": "arbitrary"
+  },
+  "georeferenceState": "none",
+  "layers": [
+    {
+      "class": "illustrative",
+      "color": "#183b4b",
+      "id": "context",
+      "label": "Illustrative maritime context"
+    },
+    {
+      "class": "disputed",
+      "color": "#d1ad52",
+      "id": "official",
+      "label": "Attributed U.S. claims"
+    },
+    {
+      "class": "observed",
+      "color": "#70b6cf",
+      "id": "published",
+      "label": "Published-source observations"
+    },
+    {
+      "class": "observed",
+      "color": "#75c99b",
+      "id": "survivor",
+      "label": "Survivor and SAR states"
+    },
+    {
+      "class": "disputed",
+      "color": "#d26969",
+      "id": "withheld",
+      "label": "Withheld or unknown"
+    },
+    {
+      "class": "illustrative",
+      "color": "#a982cf",
+      "id": "zones",
+      "label": "Unresolved maritime-zone hypotheses"
+    }
+  ],
+  "limitations": [
+    "The scene is unitless, non-georeferenced, non-metric, and not north-aligned; it is not a map, digital twin, or photogrammetric reconstruction.",
+    "No native sensor file, complete derivative history, exact clock, coordinates, datum, camera calibration, platform telemetry, or vessel control dimensions were available.",
+    "No attack trajectory, launch point, weapon, guidance, platform, sensor, route, speed, or target-recognition inference is shown.",
+    "Deaths and survivors are represented only as abstract source-reported states; no impact, body, face, injury, remains, or graphic imagery is depicted.",
+    "Territorial sea, EEZ outside territorial sea, and high seas are mutually exclusive hypotheses, not concentric distance claims or findings.",
+    "Cargo, vessel status, flag, organization membership, identities, casualty status changes, and final SAR outcome remain source-specific or unknown."
+  ],
+  "objects": [
+    {
+      "center": [
+        -12,
+        20,
+        2
+      ],
+      "evidenceState": "withheld",
+      "id": "cargo-unknown",
+      "label": "Cargo evidence not publicly disclosed in reviewed materials",
+      "labelPriority": 100,
+      "layer": "withheld",
+      "semantic": "marker",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "marker"
+    },
+    {
+      "center": [
+        48,
+        -28,
+        2
+      ],
+      "evidenceState": "withheld",
+      "id": "coordinate-unknown",
+      "label": "Coordinates, datum, and maritime zone unknown",
+      "labelPriority": 99,
+      "layer": "withheld",
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "marker"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.16
+      ],
+      "evidenceState": "zones",
+      "id": "eez-hypothesis",
+      "label": "EEZ-outside-territorial-sea hypothesis - unresolved and non-geographic",
+      "labelPriority": 48,
+      "layer": "zones",
+      "radius": [
+        45,
+        57
+      ],
+      "sectors": [
+        [
+          125,
+          220
+        ]
+      ],
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "arc-sectors"
+    },
+    {
+      "evidenceState": "published",
+      "id": "frustum-a",
+      "label": "Illustrative source sightline - no targeting geometry",
+      "labelPriority": 47,
+      "layer": "published",
+      "points": [
+        [
+          -55,
+          -35,
+          24
+        ],
+        [
+          -10,
+          -5,
+          2
+        ]
+      ],
+      "semantic": "camera",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "line"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.17
+      ],
+      "evidenceState": "zones",
+      "id": "high-seas-hypothesis",
+      "label": "High-seas hypothesis - unresolved and non-geographic",
+      "labelPriority": 46,
+      "layer": "zones",
+      "radius": [
+        60,
+        72
+      ],
+      "sectors": [
+        [
+          240,
+          335
+        ]
+      ],
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "arc-sectors"
+    },
+    {
+      "center": [
+        14,
+        -22,
+        2
+      ],
+      "evidenceState": "withheld",
+      "id": "identity-unknown",
+      "label": "Occupant identities and organization affiliations not publicly established here",
+      "labelPriority": 95,
+      "layer": "withheld",
+      "semantic": "marker",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "marker"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.32
+      ],
+      "evidenceState": "survivor",
+      "id": "reported-six",
+      "label": "U.S.-reported six survivors - identities and final outcome unresolved",
+      "labelPriority": 44,
+      "layer": "survivor",
+      "radius": 20,
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Response and aftermath",
+        "start": 2
+      },
+      "type": "ring",
+      "width": 2.5
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.25
+      ],
+      "evidenceState": "official",
+      "id": "reported-two",
+      "label": "U.S.-reported two deaths - abstract count, no bodies depicted",
+      "labelPriority": 43,
+      "layer": "official",
+      "radius": 13,
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "disc"
+    },
+    {
+      "center": [
+        38,
+        28,
+        0.3
+      ],
+      "evidenceState": "survivor",
+      "id": "sar-state",
+      "label": "Search-and-rescue notification state - rescue result unknown",
+      "labelPriority": 42,
+      "layer": "survivor",
+      "radius": 18,
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Response and aftermath",
+        "start": 2
+      },
+      "type": "disc"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "evidenceState": "context",
+      "id": "sea-cell",
+      "label": "Unitless sea surface - not a map or surveyed area",
+      "labelPriority": 41,
+      "layer": "context",
+      "semantic": "zone",
+      "size": [
+        190,
+        130
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "plane"
+    },
+    {
+      "center": [
+        -55,
+        -35,
+        24
+      ],
+      "evidenceState": "published",
+      "id": "source-camera",
+      "label": "Published remote-view source - camera platform and pose unknown",
+      "labelPriority": 90,
+      "layer": "published",
+      "semantic": "camera",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "marker"
+    },
+    {
+      "evidenceState": "survivor",
+      "id": "state-flow",
+      "label": "Abstract publication-to-SAR state transition - not a vessel or survivor route",
+      "labelPriority": 39,
+      "layer": "survivor",
+      "points": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          18,
+          12,
+          1
+        ],
+        [
+          38,
+          28,
+          1
+        ]
+      ],
+      "semantic": "vessel",
+      "temporal": {
+        "end": 3,
+        "label": "Response and aftermath",
+        "start": 2
+      },
+      "type": "path"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.15
+      ],
+      "evidenceState": "zones",
+      "id": "territorial-hypothesis",
+      "label": "Territorial-sea hypothesis - unresolved and non-geographic",
+      "labelPriority": 38,
+      "layer": "zones",
+      "radius": [
+        30,
+        42
+      ],
+      "sectors": [
+        [
+          10,
+          105
+        ]
+      ],
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "arc-sectors"
+    },
+    {
+      "center": [
+        0,
+        0,
+        2.4
+      ],
+      "evidenceState": "published",
+      "id": "vessel",
+      "label": "Generic vessel silhouette - dimensions, identity, and flag unknown",
+      "labelPriority": 37,
+      "layer": "published",
+      "semantic": "vessel",
+      "size": [
+        18,
+        6,
+        4.8
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "box"
+    }
+  ],
+  "scaleState": "unitless",
+  "schema": "forensic-reconstruction-scene/2.0.0",
+  "status": "working_non_metric",
+  "temporal": {
+    "current": 0,
+    "label": "Context",
+    "range": {
+      "end": 3,
+      "start": 0
+    }
+  },
+  "temporalStates": [
+    {
+      "id": "context",
+      "label": "Context",
+      "order": 0
+    },
+    {
+      "id": "event",
+      "label": "Event",
+      "order": 1
+    },
+    {
+      "id": "investigation",
+      "label": "Investigation",
+      "order": 3
+    },
+    {
+      "id": "response",
+      "label": "Response",
+      "order": 2
+    }
+  ],
+  "title": "June 21 maritime event cell - qualitative source-state reconstruction"
+}

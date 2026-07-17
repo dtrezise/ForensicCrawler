@@ -1,0 +1,31 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "byteSize": 307695,
+      "path": "forensic-package.json",
+      "sha256": "3bf6235f6184517b87474f388302f633287974bf8e88ba99ea66458180c49e00"
+    },
+    {
+      "byteSize": 1142,
+      "path": "local/reconstruction-inputs.json",
+      "sha256": "84538e035c0f3185428125ed70919c66350855339d6479da66a0eb458792dcaf"
+    },
+    {
+      "byteSize": 10612,
+      "path": "local/reconstruction-scene.json",
+      "sha256": "bca597eeb78caa9908d98388ed6abca95f0ce752008f3c984d8190b8cf1efad9"
+    }
+  ],
+  "generatedAt": "2026-07-17T18:00:00Z",
+  "packageId": "fc_pkg_027b7be6-c5ae-49f5-84cb-a6b7a171520c",
+  "rootHash": "82f5b291477040e4c8ee112e752cd257bcaae87a266af544e872bdf119f28837",
+  "schemaVersion": "2.0.0",
+  "signature": {
+    "algorithm": "ed25519",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEARsTcOaKzvnVLiA8Xi0g1SGHUX655pXHDCh/EmfwJe+Q=\n-----END PUBLIC KEY-----\n",
+    "status": "locally_signed_untrusted_identity",
+    "trustedTimestamp": null,
+    "value": "jM5VCbc1/rOOI80LEv0H8auxROn5OJn5eZiMMVJWkD8Trdm3ZEMIp4vNShmJ3dKJ6TZZrEDrbJAHnrnTCcbsDQ=="
+  }
+}

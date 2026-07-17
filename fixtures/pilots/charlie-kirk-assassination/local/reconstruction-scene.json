@@ -1,0 +1,439 @@
+{
+  "calibration": {
+    "cameraIntrinsics": false,
+    "metricPhotogrammetry": false,
+    "originalImages": false,
+    "surveyedControl": false,
+    "trajectoryValidated": false
+  },
+  "cameraPresets": [
+    {
+      "id": "corridor",
+      "label": "Alleged corridor",
+      "position": [
+        90,
+        68,
+        34
+      ],
+      "target": [
+        0,
+        74,
+        5
+      ]
+    },
+    {
+      "id": "event",
+      "label": "Event region",
+      "position": [
+        52,
+        -58,
+        34
+      ],
+      "target": [
+        0,
+        8,
+        3
+      ]
+    },
+    {
+      "id": "overview",
+      "label": "Overview",
+      "position": [
+        190,
+        -190,
+        170
+      ],
+      "target": [
+        0,
+        85,
+        0
+      ]
+    },
+    {
+      "id": "roof",
+      "label": "Rooftop region",
+      "position": [
+        62,
+        100,
+        42
+      ],
+      "target": [
+        0,
+        146,
+        6
+      ]
+    }
+  ],
+  "coordinateSystem": {
+    "georeferenced": false,
+    "id": "SCENE_FRAME_V1",
+    "northAligned": false,
+    "origin": "unresolved seat/canopy event region",
+    "units": "meters"
+  },
+  "georeferenceState": "none",
+  "layers": [
+    {
+      "class": "STATE_ALLEGED",
+      "color": "#ef8f62",
+      "id": "alleged",
+      "label": "State allegations"
+    },
+    {
+      "class": "PARAMETRIC_PLACEHOLDER",
+      "color": "#28323b",
+      "id": "context",
+      "label": "Parametric context"
+    },
+    {
+      "class": "CONTRADICTED",
+      "color": "#d56b78",
+      "id": "contradiction",
+      "label": "Contradiction / uncertainty"
+    },
+    {
+      "class": "OBSERVED_SOURCE_STATED",
+      "color": "#e6c779",
+      "id": "source",
+      "label": "Source-stated anchors"
+    }
+  ],
+  "limitations": [
+    "No original calibrated image set or surveyed control points were available.",
+    "Massing dimensions, route curvature, heights, and display bearing are illustrative.",
+    "The 160- and 200-yard values are source-reported approximate radial constraints with unknown endpoints.",
+    "The corridor line visualizes a source allegation and is not a trajectory, firing solution, or wound-path analysis.",
+    "Faces, minors, graphic injury, exact tactical details, and private-person locations are excluded."
+  ],
+  "objects": [
+    {
+      "center": [
+        0,
+        146.3,
+        12.4
+      ],
+      "evidenceState": "alleged",
+      "id": "alleged-roof-position",
+      "label": "State-alleged rooftop region",
+      "labelPriority": 100,
+      "layer": "alleged",
+      "semantic": "structure",
+      "temporal": {
+        "end": 1,
+        "label": "Event-state display",
+        "start": 1
+      },
+      "type": "marker"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "evidenceState": "context",
+      "id": "canopy",
+      "label": "Canopy placeholder — dimensions unknown",
+      "labelPriority": 49,
+      "layer": "context",
+      "semantic": "structure",
+      "size": [
+        5,
+        5,
+        3.2
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "canopy"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.1
+      ],
+      "evidenceState": "context",
+      "id": "crowd-sectors",
+      "label": "Three qualitative crowd sectors",
+      "labelPriority": 48,
+      "layer": "context",
+      "radius": [
+        7,
+        18
+      ],
+      "sectors": [
+        [
+          -155,
+          -35
+        ],
+        [
+          -25,
+          25
+        ],
+        [
+          35,
+          155
+        ]
+      ],
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "arc-sectors"
+    },
+    {
+      "evidenceState": "alleged",
+      "id": "escape-topology",
+      "label": "Coarse alleged departure topology; exact route withheld/unknown",
+      "labelPriority": 47,
+      "layer": "alleged",
+      "points": [
+        [
+          0,
+          146.3,
+          12.4
+        ],
+        [
+          22,
+          168,
+          12.4
+        ],
+        [
+          32,
+          176,
+          0.2
+        ],
+        [
+          38,
+          205,
+          0.2
+        ]
+      ],
+      "semantic": "path",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "path"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.05
+      ],
+      "evidenceState": "source",
+      "id": "event-courtyard",
+      "label": "Fountain Courtyard event region (coarse)",
+      "labelPriority": 46,
+      "layer": "source",
+      "radius": 18,
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "disc"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "evidenceState": "context",
+      "id": "ground",
+      "label": "Illustrative local ground plane",
+      "labelPriority": -1,
+      "layer": "context",
+      "semantic": "context",
+      "size": [
+        250,
+        430
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "plane"
+    },
+    {
+      "center": [
+        0,
+        27,
+        7
+      ],
+      "evidenceState": "context",
+      "id": "hall-of-flags",
+      "label": "Hall of Flags massing — dimensions unknown",
+      "labelPriority": 44,
+      "layer": "context",
+      "semantic": "structure",
+      "size": [
+        62,
+        16,
+        14
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "box"
+    },
+    {
+      "center": [
+        38,
+        205,
+        0.08
+      ],
+      "evidenceState": "source",
+      "id": "recovery-zone",
+      "label": "Coarse wooded recovery zone",
+      "labelPriority": 43,
+      "layer": "source",
+      "radius": 22,
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "disc"
+    },
+    {
+      "center": [
+        0,
+        146.3,
+        6
+      ],
+      "evidenceState": "context",
+      "id": "roof-building",
+      "label": "Illustrative rooftop mass — exact building unresolved",
+      "labelPriority": 42,
+      "layer": "context",
+      "semantic": "structure",
+      "size": [
+        58,
+        34,
+        12
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "box"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.15
+      ],
+      "evidenceState": "alleged",
+      "id": "roof-region-160",
+      "label": "State filing: approximately 160 yards",
+      "labelPriority": 41,
+      "layer": "alleged",
+      "radius": 146.3,
+      "semantic": "structure",
+      "temporal": {
+        "end": 1,
+        "label": "Event-state display",
+        "start": 1
+      },
+      "type": "ring",
+      "width": 1.6
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.16
+      ],
+      "evidenceState": "contradiction",
+      "id": "roof-region-200",
+      "label": "Early briefing: roughly 200 yards",
+      "labelPriority": 40,
+      "layer": "contradiction",
+      "radius": 182.9,
+      "semantic": "structure",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "ring",
+      "width": 1.1
+    },
+    {
+      "evidenceState": "alleged",
+      "id": "sightline-volume",
+      "label": "Source-stated clear corridor — not a bullet trajectory",
+      "labelPriority": 39,
+      "layer": "alleged",
+      "points": [
+        [
+          0,
+          146.3,
+          12.4
+        ],
+        [
+          0,
+          0,
+          1.2
+        ]
+      ],
+      "semantic": "camera",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "line"
+    }
+  ],
+  "scaleState": "approximate",
+  "schema": "forensic-reconstruction-scene/2.0.0",
+  "status": "WORKING — SCHEMATIC, NOT PHOTOGRAMMETRIC OR COURT-VALIDATED",
+  "temporal": {
+    "current": 0,
+    "label": "Context",
+    "range": {
+      "end": 3,
+      "start": 0
+    }
+  },
+  "temporalStates": [
+    {
+      "id": "context",
+      "label": "Context",
+      "order": 0
+    },
+    {
+      "id": "event",
+      "label": "Event",
+      "order": 1
+    },
+    {
+      "id": "investigation",
+      "label": "Investigation",
+      "order": 3
+    },
+    {
+      "id": "response",
+      "label": "Response",
+      "order": 2
+    }
+  ],
+  "title": "Charlie Kirk assassination — schematic public-record reconstruction"
+}

@@ -58,7 +58,8 @@ export function validateJsonSchema(data, schemaPath) {
 }
 
 export function validatePackage(data) {
-  return validateJsonSchema(data, PACKAGE_SCHEMA_PATH);
+  const versionDirectory = String(data.schemaVersion ?? "1.0.0").startsWith("2.") ? "v2" : "v1";
+  return validateJsonSchema(data, resolve(ROOT, `schemas/${versionDirectory}/forensic-package.schema.json`));
 }
 
 export function eventHash(event) {
@@ -113,6 +114,13 @@ const RECORD_ARRAYS = [
   "exports",
   "importRuns",
   "auditEvents",
+  "sourceAcquisitions",
+  "sourceFamilies",
+  "underlyingAssets",
+  "transformationLedger",
+  "correctionLedger",
+  "packageRevisions",
+  "spatialArtifacts",
 ];
 
 export function recordIndex(data) {
@@ -138,7 +146,7 @@ function referencedIds(value, key = "") {
 
   const references = [];
   for (const [childKey, childValue] of Object.entries(value)) {
-    if (childKey === "actorId") continue;
+    if (childKey === "actorId" || childKey === "previousPackageId") continue;
     if (childKey.endsWith("Id") && typeof childValue === "string" && childValue.startsWith("fc_")) {
       references.push({ key: childKey, id: childValue });
       continue;
@@ -161,6 +169,36 @@ export function auditPackage(data) {
 
   const { index, duplicates } = recordIndex(data);
   for (const id of duplicates) issues.push(`duplicate id: ${id}`);
+
+  if (String(data.schemaVersion).startsWith("2.")) {
+    if (data.packageId.includes("00000000-0000")) issues.push("v2 package retains placeholder package id");
+    if (data.sourceAcquisitions.length !== data.sources.length) issues.push("v2 source acquisition coverage mismatch");
+    if (data.sourceSnapshots.length !== data.sources.length) issues.push("v2 source snapshot coverage mismatch");
+    for (const source of data.sources) {
+      if (!data.sourceAcquisitions.some((item) => item.sourceId === source.id)) issues.push(`source has no acquisition: ${source.id}`);
+      if (!data.sourceFamilies.some((item) => item.id === source.sourceFamilyId)) issues.push(`source has no valid family: ${source.id}`);
+      if (!(source.underlyingAssetIds ?? []).length) issues.push(`source has no underlying asset: ${source.id}`);
+    }
+    for (const claim of data.claims) {
+      if (!claim.confidenceAssessmentIds.length) issues.push(`claim has no confidence assessment: ${claim.id}`);
+    }
+    for (const assessment of data.confidenceAssessments) {
+      if (assessment.lowerBound !== null || assessment.upperBound !== null) issues.push(`v2 confidence uses pseudo-probability bounds: ${assessment.id}`);
+      if (assessment.calibrationType !== "ordinal_not_statistical") issues.push(`v2 confidence calibration missing: ${assessment.id}`);
+    }
+    for (const relationship of data.claimSourceRelationships) {
+      if (!relationship.locator?.value) issues.push(`claim-source locator missing: ${relationship.id}`);
+      if (!relationship.locatorReview?.status) issues.push(`claim-source locator review missing: ${relationship.id}`);
+    }
+    for (const artifact of data.spatialArtifacts) {
+      if (artifact.measurementEnabled && !artifact.metricValidated) issues.push(`measurement enabled on non-metric artifact: ${artifact.id}`);
+      if (!artifact.validation?.status) issues.push(`spatial validation state missing: ${artifact.id}`);
+    }
+    const bodyCount = data.sourceSnapshots.filter((snapshot) => snapshot.contentHash).length;
+    if (data.integritySummary.sourceBodiesPreserved !== bodyCount) issues.push("integrity summary preserved-body count mismatch");
+    if (data.integritySummary.sourceBodiesNotPreserved !== data.sourceSnapshots.length - bodyCount) issues.push("integrity summary metadata-only count mismatch");
+    if (!data.integritySummary.locatorCoverage || !data.integritySummary.confidenceCoverage) issues.push("v2 package declares incomplete required coverage");
+  }
 
   for (const [id, entry] of index) {
     for (const reference of referencedIds(entry.record)) {

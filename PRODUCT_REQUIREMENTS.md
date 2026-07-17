@@ -62,8 +62,11 @@ Target: local Phase 1 vertical slice
 
 - all required repository artifacts exist and cross-link;
 - the Apollo 11 fixture validates and passes package audits;
+- the Charlie Kirk fixture validates, retains exact procedural status, passes package audits, and preserves material source conflicts without averaging;
+- the Renee Good fixture validates, preserves the uncharged/open-investigation posture, passes package audits, and keeps observed motion, attributed agency claims, unresolved contact, and medical/legal classifications separate;
+- the Southern Spear vessel-strike fixture validates, preserves the incomplete-public-accounting boundary, passes package audits, and keeps official target/cargo claims, source-specific casualty aggregates, survivor/SAR states, maritime-zone hypotheses, litigation allegations, and institutional legal positions separate;
 - a deterministic export and report reproduce under test;
-- the local interface builds and renders the fixture;
+- the local interface builds and renders all four fixtures and each case scene loads only on demand;
 - timeline discrepancy, evidence relationships, rights status, provenance, and export gate are inspectable;
 - keyboard and responsive checks pass locally; and
-- no live crawl, external account, deployment, publication, or push occurs.
+- no live crawl, authenticated or paid access, source-body retention, external account, outreach, deployment, publication, or push occurs.

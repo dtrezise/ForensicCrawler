@@ -1,0 +1,561 @@
+{
+  "calibration": {
+    "cameraIntrinsics": false,
+    "collisionValidated": false,
+    "metricPhotogrammetry": false,
+    "originalImages": false,
+    "surveyedControl": false,
+    "trajectoryValidated": false
+  },
+  "cameraPresets": [
+    {
+      "id": "cameras",
+      "label": "Camera families",
+      "position": [
+        40,
+        -30,
+        32
+      ],
+      "target": [
+        0,
+        -8,
+        1
+      ]
+    },
+    {
+      "id": "encounter",
+      "label": "Encounter topology",
+      "position": [
+        28,
+        -48,
+        24
+      ],
+      "target": [
+        -1,
+        -11,
+        1
+      ]
+    },
+    {
+      "id": "overview",
+      "label": "Overview",
+      "position": [
+        70,
+        -78,
+        66
+      ],
+      "target": [
+        0,
+        -2,
+        0
+      ]
+    },
+    {
+      "id": "response",
+      "label": "Final-rest / response",
+      "position": [
+        38,
+        -22,
+        28
+      ],
+      "target": [
+        8,
+        7,
+        0
+      ]
+    }
+  ],
+  "coordinateSystem": {
+    "georeferenced": false,
+    "id": "STREET_FRAME_V1",
+    "northAligned": false,
+    "origin": "intersection-level incident region; display Y follows Portland Avenue",
+    "units": "display meters"
+  },
+  "georeferenceState": "none",
+  "layers": [
+    {
+      "class": "INDEPENDENTLY_CORROBORATED",
+      "color": "#6aa8d8",
+      "id": "analysis",
+      "label": "Independent analysis"
+    },
+    {
+      "class": "PARAMETRIC_PLACEHOLDER",
+      "color": "#28323b",
+      "id": "context",
+      "label": "Parametric street context"
+    },
+    {
+      "class": "ATTRIBUTED_UNVERIFIED",
+      "color": "#ef8f62",
+      "id": "federal",
+      "label": "Attributed federal account"
+    },
+    {
+      "class": "OBSERVED_SOURCE_STATED",
+      "color": "#e6c779",
+      "id": "observed",
+      "label": "Publisher-verified observations"
+    },
+    {
+      "class": "UNRESOLVED",
+      "color": "#d56b78",
+      "id": "uncertainty",
+      "label": "Unresolved / prohibited inference"
+    }
+  ],
+  "limitations": [
+    "No rights-cleared native multi-view set, authenticated master clock, or complete chain of custody was available.",
+    "Road widths, vehicle dimensions, display orientation, paths, camera positions, and all distances are illustrative.",
+    "The display separates observed motion from the DHS account; neither layer establishes intent or legal justification.",
+    "No bullet path, wound path, collision solve, vehicle speed, physical-contact determination, or clinical counterfactual is shown.",
+    "No faces, children, graphic injury, private addresses, plates, witness positions, or sensitive tactical detail are included."
+  ],
+  "objects": [
+    {
+      "center": [
+        -4,
+        -8,
+        2.3
+      ],
+      "evidenceState": "analysis",
+      "id": "agent-phone",
+      "label": "Agent handheld phone source - not bodycam",
+      "labelPriority": 100,
+      "layer": "analysis",
+      "semantic": "camera",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "marker"
+    },
+    {
+      "center": [
+        2,
+        -13,
+        0.15
+      ],
+      "evidenceState": "observed",
+      "id": "approach-region",
+      "label": "Agent approach / driver's-side region",
+      "labelPriority": 49,
+      "layer": "observed",
+      "radius": 4.5,
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "disc"
+    },
+    {
+      "center": [
+        0,
+        -4,
+        0.11
+      ],
+      "evidenceState": "context",
+      "id": "bike-walk",
+      "label": "Recent walking/biking context - schematic only",
+      "labelPriority": -1,
+      "layer": "context",
+      "semantic": "context",
+      "size": [
+        74,
+        2.2,
+        0.05
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "box"
+    },
+    {
+      "center": [
+        -14,
+        -8,
+        2
+      ],
+      "evidenceState": "analysis",
+      "id": "camera-a",
+      "label": "Witness-camera family A - exact position unknown",
+      "labelPriority": 97,
+      "layer": "analysis",
+      "semantic": "camera",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "marker"
+    },
+    {
+      "center": [
+        13,
+        -5,
+        2
+      ],
+      "evidenceState": "analysis",
+      "id": "camera-b",
+      "label": "Witness-camera family B - exact position unknown",
+      "labelPriority": 96,
+      "layer": "analysis",
+      "semantic": "camera",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "marker"
+    },
+    {
+      "center": [
+        -3,
+        -8,
+        0.2
+      ],
+      "evidenceState": "uncertainty",
+      "id": "contact-unknown",
+      "label": "Contact / injury unresolved zone",
+      "labelPriority": 45,
+      "layer": "uncertainty",
+      "radius": 4.5,
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "disc"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.06
+      ],
+      "evidenceState": "context",
+      "id": "east-34th",
+      "label": "East 34th Street cross corridor - width illustrative",
+      "labelPriority": 44,
+      "layer": "context",
+      "semantic": "structure",
+      "size": [
+        76,
+        14,
+        0.08
+      ],
+      "temporal": {
+        "end": 1,
+        "label": "Event-state display",
+        "start": 1
+      },
+      "type": "box"
+    },
+    {
+      "evidenceState": "federal",
+      "id": "federal-vehicle-account",
+      "label": "DHS-attributed vehicle weaponization account - not a finding",
+      "labelPriority": 43,
+      "layer": "federal",
+      "points": [
+        [
+          -2,
+          -16,
+          0.38
+        ],
+        [
+          -2,
+          -20,
+          0.38
+        ],
+        [
+          1,
+          -10,
+          0.38
+        ],
+        [
+          8,
+          4,
+          0.38
+        ]
+      ],
+      "semantic": "vehicle",
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "path"
+    },
+    {
+      "center": [
+        9,
+        9,
+        1
+      ],
+      "evidenceState": "observed",
+      "id": "final-rest",
+      "label": "Vehicle final-rest region - exact pose withheld/unknown",
+      "labelPriority": 42,
+      "layer": "observed",
+      "semantic": "vehicle",
+      "size": [
+        2.2,
+        4.8,
+        1.8
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Response and aftermath",
+        "start": 2
+      },
+      "type": "box"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "evidenceState": "context",
+      "id": "ground",
+      "label": "Illustrative local ground plane",
+      "labelPriority": -1,
+      "layer": "context",
+      "semantic": "context",
+      "size": [
+        86,
+        126
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "plane"
+    },
+    {
+      "center": [
+        -2,
+        -16,
+        1
+      ],
+      "evidenceState": "observed",
+      "id": "initial-suv",
+      "label": "SUV placeholder - orientation and dimensions illustrative",
+      "labelPriority": 40,
+      "layer": "observed",
+      "semantic": "vehicle",
+      "size": [
+        2.2,
+        4.8,
+        1.8
+      ],
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "box"
+    },
+    {
+      "center": [
+        -2,
+        -16,
+        0.12
+      ],
+      "evidenceState": "observed",
+      "id": "initial-suv-zone",
+      "label": "Initial diagonal SUV region - pose not measured",
+      "labelPriority": 39,
+      "layer": "observed",
+      "radius": 5.5,
+      "semantic": "vehicle",
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "disc"
+    },
+    {
+      "center": [
+        2,
+        -12,
+        1.6
+      ],
+      "evidenceState": "observed",
+      "id": "other-agent",
+      "label": "Second-agent coarse region",
+      "labelPriority": 88,
+      "layer": "observed",
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "marker"
+    },
+    {
+      "center": [
+        0,
+        0,
+        0.04
+      ],
+      "evidenceState": "context",
+      "id": "portland",
+      "label": "Portland Avenue one-way corridor - width illustrative",
+      "labelPriority": 37,
+      "layer": "context",
+      "semantic": "structure",
+      "size": [
+        18,
+        112,
+        0.08
+      ],
+      "temporal": {
+        "end": 1,
+        "label": "Event-state display",
+        "start": 1
+      },
+      "type": "box"
+    },
+    {
+      "center": [
+        9,
+        9,
+        0.2
+      ],
+      "evidenceState": "observed",
+      "id": "response-zone",
+      "label": "Municipal medical-response region - no clinical counterfactual",
+      "labelPriority": 36,
+      "layer": "observed",
+      "radius": 11,
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Response and aftermath",
+        "start": 2
+      },
+      "type": "disc"
+    },
+    {
+      "center": [
+        -4,
+        -8,
+        1.6
+      ],
+      "evidenceState": "analysis",
+      "id": "ross-first-shot",
+      "label": "Ross coarse first-shot region - front-left topology",
+      "labelPriority": 85,
+      "layer": "analysis",
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Persistent context",
+        "start": 0
+      },
+      "type": "marker"
+    },
+    {
+      "center": [
+        -1,
+        -6,
+        0.24
+      ],
+      "evidenceState": "uncertainty",
+      "id": "trajectory-prohibited",
+      "label": "No trajectory volume drawn: physical evidence unavailable",
+      "labelPriority": 34,
+      "layer": "uncertainty",
+      "radius": 9,
+      "semantic": "zone",
+      "temporal": {
+        "end": 3,
+        "label": "Investigation and uncertainty",
+        "start": 3
+      },
+      "type": "disc"
+    },
+    {
+      "evidenceState": "analysis",
+      "id": "vehicle-motion",
+      "label": "Qualitative reverse then forward/right corridor - not speed or collision analysis",
+      "labelPriority": 33,
+      "layer": "analysis",
+      "points": [
+        [
+          -2,
+          -16,
+          0.3
+        ],
+        [
+          -2,
+          -20,
+          0.3
+        ],
+        [
+          1,
+          -10,
+          0.3
+        ],
+        [
+          8,
+          4,
+          0.3
+        ]
+      ],
+      "semantic": "vehicle",
+      "temporal": {
+        "end": 1,
+        "label": "Event-state display",
+        "start": 1
+      },
+      "type": "path"
+    }
+  ],
+  "scaleState": "approximate",
+  "schema": "forensic-reconstruction-scene/2.0.0",
+  "status": "WORKING - QUALITATIVE STREET SCHEMATIC, NOT PHOTOGRAMMETRIC OR COURT-VALIDATED",
+  "temporal": {
+    "current": 0,
+    "label": "Context",
+    "range": {
+      "end": 3,
+      "start": 0
+    }
+  },
+  "temporalStates": [
+    {
+      "id": "context",
+      "label": "Context",
+      "order": 0
+    },
+    {
+      "id": "event",
+      "label": "Event",
+      "order": 1
+    },
+    {
+      "id": "investigation",
+      "label": "Investigation",
+      "order": 3
+    },
+    {
+      "id": "response",
+      "label": "Response",
+      "order": 2
+    }
+  ],
+  "title": "Renee Good killing - schematic public-record reconstruction"
+}

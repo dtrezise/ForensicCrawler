@@ -1,0 +1,44 @@
+{
+  "attributedClaims": [
+    "DHS vehicle-weaponization account",
+    "DHS self-defense account",
+    "DHS domestic-terrorism characterization"
+  ],
+  "caseId": "fc_inv_00000000-0000-4000-8000-00000000012d",
+  "coordinateSystem": "STREET_FRAME_V1 relational local meters; not georeferenced or metric-validated",
+  "fixedFacts": [
+    "intersection-level incident area",
+    "qualitative reverse-then-forward/right sequence",
+    "three reported gunshots",
+    "vehicle reaches a nearby final-rest region"
+  ],
+  "prohibitedInferences": [
+    "intent from motion alone",
+    "lawfulness from an agency statement",
+    "contact or injury from a compressed frame",
+    "trajectory from sightline",
+    "counterfactual survivability",
+    "identity from pixels",
+    "graphic injury reconstruction"
+  ],
+  "schema": "forensic-crawler.reconstruction-inputs/1",
+  "sourceReportedValues": {
+    "interShotIntervalsSeconds": [
+      0.399,
+      0.299
+    ],
+    "municipalArrivalExpression": "approximately 9:43:14-9:43:34 a.m. CST",
+    "shotTime": "approximately 9:37:13 a.m. CST"
+  },
+  "unknowns": [
+    "driver intent",
+    "exact physical contact",
+    "vehicle speed",
+    "agent body pose",
+    "bullet trajectories",
+    "camera intrinsics",
+    "native clock offsets",
+    "surveyed road and vehicle control",
+    "Good-specific ICE body-camera existence"
+  ]
+}

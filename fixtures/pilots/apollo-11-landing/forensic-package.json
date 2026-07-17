@@ -56,7 +56,13 @@
   "assetTransformations": [
     {
       "assetId": "fc_ast_00000000-0000-4000-8000-000000000001",
+      "command": "deterministic-local-builder",
+      "configurationHash": "c1b600fd2487300f53e74bffcc12b429225eff69a0ba28c09e9f054d1e13e210",
       "createdAt": "2026-07-16T20:15:01Z",
+      "environment": {
+        "network": false,
+        "rawThirdPartyBodies": false
+      },
       "id": "fc_xfm_00000000-0000-4000-8000-000000000001",
       "inputCaptureId": "fc_cap_00000000-0000-4000-8000-000000000001",
       "method": "sort object keys and ID-bearing arrays; preserve numeric values",
@@ -86,17 +92,23 @@
   "auditEvents": [
     {
       "actorId": "source-reconciliation-editor",
+      "actorIdentity": {
+        "authenticated": false,
+        "displayName": "source-reconciliation-editor",
+        "identityType": "human_role",
+        "serviceVersion": null
+      },
       "actorType": "human_role",
-      "createdAt": "2026-07-16T20:00:00Z",
+      "createdAt": "2026-07-16T20:00:00.000Z",
       "details": {
         "networkUse": "manual research only",
         "rawBytesRetained": false
       },
-      "eventHash": "5357ac2c7fffc82c3c7c0b5562e20b0b6d80307015e9f16db98ad821891f1999",
+      "eventHash": "1961f472eb756142cdf3b24b38a98b6afb090e1905bc9d72e5083689ab1dfbbe",
       "eventType": "source_scope_reviewed",
       "id": "fc_aud_00000000-0000-4000-8000-000000000001",
       "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
-      "occurredAt": "2026-07-16T20:00:00Z",
+      "occurredAt": "2026-07-16T20:00:00.000Z",
       "previousHash": null,
       "sequence": 1,
       "subjectIds": [
@@ -107,18 +119,24 @@
     },
     {
       "actorId": "forensic-crawler-fixture/1.0.0",
+      "actorIdentity": {
+        "authenticated": false,
+        "displayName": "forensic-crawler-fixture/1.0.0",
+        "identityType": "local_tool",
+        "serviceVersion": "forensic-crawler-fixture/1.0.0"
+      },
       "actorType": "local_tool",
-      "createdAt": "2026-07-16T20:15:00Z",
+      "createdAt": "2026-07-16T20:18:00.000Z",
       "details": {
         "differenceSeconds": 3.1,
         "sourceBodiesCopied": false
       },
-      "eventHash": "894efd8238b9722a55cd478d4290b244cb737a955718f9de4dc4376965c969ad",
+      "eventHash": "4092ecfbcdf93c632f239cab10f16e60dd89ca34147992af8e535fdd75d38e02",
       "eventType": "metadata_fixture_created",
       "id": "fc_aud_00000000-0000-4000-8000-000000000002",
       "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
-      "occurredAt": "2026-07-16T20:15:00Z",
-      "previousHash": "5357ac2c7fffc82c3c7c0b5562e20b0b6d80307015e9f16db98ad821891f1999",
+      "occurredAt": "2026-07-16T20:18:00.000Z",
+      "previousHash": "1961f472eb756142cdf3b24b38a98b6afb090e1905bc9d72e5083689ab1dfbbe",
       "sequence": 2,
       "subjectIds": [
         "fc_ast_00000000-0000-4000-8000-000000000001",
@@ -129,18 +147,24 @@
     },
     {
       "actorId": "temporal-reconstruction-analyst",
+      "actorIdentity": {
+        "authenticated": false,
+        "displayName": "temporal-reconstruction-analyst",
+        "identityType": "human_role",
+        "serviceVersion": null
+      },
       "actorType": "human_role",
-      "createdAt": "2026-07-16T20:20:00Z",
+      "createdAt": "2026-07-16T20:26:00.000Z",
       "details": {
         "differenceSeconds": 3.1,
         "preferredExactTime": null
       },
-      "eventHash": "db504de9be87f8d10781158001af292ac86a9f82cb33ed781dcbf13b6d73f484",
+      "eventHash": "0f202eb404062cf4424bfbd7137c1a9bcd40dd3b0bdb2bd264e112d28122d07b",
       "eventType": "temporal_discrepancy_recorded",
       "id": "fc_aud_00000000-0000-4000-8000-000000000003",
       "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
-      "occurredAt": "2026-07-16T20:20:00Z",
-      "previousHash": "894efd8238b9722a55cd478d4290b244cb737a955718f9de4dc4376965c969ad",
+      "occurredAt": "2026-07-16T20:26:00.000Z",
+      "previousHash": "4092ecfbcdf93c632f239cab10f16e60dd89ca34147992af8e535fdd75d38e02",
       "sequence": 3,
       "subjectIds": [
         "fc_ctr_00000000-0000-4000-8000-000000000001",
@@ -150,18 +174,24 @@
     },
     {
       "actorId": "rights-privacy-compliance-editor",
+      "actorIdentity": {
+        "authenticated": false,
+        "displayName": "rights-privacy-compliance-editor",
+        "identityType": "human_role",
+        "serviceVersion": null
+      },
       "actorType": "human_role",
-      "createdAt": "2026-07-16T20:20:00Z",
+      "createdAt": "2026-07-16T20:29:00.000Z",
       "details": {
         "exportProfile": "private_workspace",
         "remoteBytesRetained": false
       },
-      "eventHash": "e10595a409d7b0e332e409765d3b7550adcdc8d9215db0ad57f768f4eb444894",
+      "eventHash": "a85d0d2e81157f0d7578692d6f6dbeb315fed4f93f52b857b9376b07e51766c5",
       "eventType": "rights_review_recorded",
       "id": "fc_aud_00000000-0000-4000-8000-000000000004",
       "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
-      "occurredAt": "2026-07-16T20:20:00Z",
-      "previousHash": "db504de9be87f8d10781158001af292ac86a9f82cb33ed781dcbf13b6d73f484",
+      "occurredAt": "2026-07-16T20:29:00.000Z",
+      "previousHash": "0f202eb404062cf4424bfbd7137c1a9bcd40dd3b0bdb2bd264e112d28122d07b",
       "sequence": 4,
       "subjectIds": [
         "fc_rev_00000000-0000-4000-8000-000000000001",
@@ -173,21 +203,27 @@
     },
     {
       "actorId": "forensic-crawler-package/1.0.0",
+      "actorIdentity": {
+        "authenticated": false,
+        "displayName": "forensic-crawler-package/1.0.0",
+        "identityType": "local_tool",
+        "serviceVersion": "forensic-crawler-package/1.0.0"
+      },
       "actorType": "local_tool",
-      "createdAt": "2026-07-16T20:30:00Z",
+      "createdAt": "2026-07-16T20:42:00.000Z",
       "details": {
         "schemaVersion": "1.0.0",
         "status": "working"
       },
-      "eventHash": "7c7c91ba9046fe6a7bd50adbbf4c91f44af89465c7896755f9342b73a48a45e9",
+      "eventHash": "b24490299598bf550ea3b1a64e168d9e2d9f60da96741b4fa44ab637207f4b00",
       "eventType": "working_package_assembled",
       "id": "fc_aud_00000000-0000-4000-8000-000000000005",
       "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
-      "occurredAt": "2026-07-16T20:30:00Z",
-      "previousHash": "e10595a409d7b0e332e409765d3b7550adcdc8d9215db0ad57f768f4eb444894",
+      "occurredAt": "2026-07-16T20:42:00.000Z",
+      "previousHash": "a85d0d2e81157f0d7578692d6f6dbeb315fed4f93f52b857b9376b07e51766c5",
       "sequence": 5,
       "subjectIds": [
-        "fc_pkg_00000000-0000-4000-8000-000000000001",
+        "fc_pkg_b3f890b4-9a89-45b8-8101-35e42297bfe6",
         "fc_inv_00000000-0000-4000-8000-000000000001"
       ]
     }
@@ -242,9 +278,19 @@
         "label": "Landing occurrence",
         "value": "5.4 Landing Dynamics"
       },
+      "locatorReview": {
+        "reviewedAt": "2026-07-16T20:30:00Z",
+        "reviewerRole": "deterministic package enhancer",
+        "status": "machine_checkable_metadata",
+        "supportsProposition": "not_semantically_verified"
+      },
       "rationale": "The official mission report states that landing on the surface occurred.",
+      "sourceFamilyId": "fc_sfm_a686f98d-1926-4d16-8dc7-b46ce103136b",
       "sourceId": "fc_src_00000000-0000-4000-8000-000000000001",
-      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000001"
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000001",
+      "underlyingAssetIds": [
+        "fc_uast_d4553b5e-decb-44bb-857b-4bd48a9d6ec4"
+      ]
     },
     {
       "claimId": "fc_clm_00000000-0000-4000-8000-000000000001",
@@ -257,9 +303,19 @@
         "label": "Landing occurrence",
         "value": "Lunar Landing Time"
       },
+      "locatorReview": {
+        "reviewedAt": "2026-07-16T20:30:00Z",
+        "reviewerRole": "deterministic package enhancer",
+        "status": "machine_checkable_metadata",
+        "supportsProposition": "not_semantically_verified"
+      },
       "rationale": "The official event record lists a lunar landing time.",
+      "sourceFamilyId": "fc_sfm_a686f98d-1926-4d16-8dc7-b46ce103136b",
       "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
-      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000002"
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000002",
+      "underlyingAssetIds": [
+        "fc_uast_64b259f5-ec23-4171-8384-d7a61bd655f5"
+      ]
     },
     {
       "claimId": "fc_clm_00000000-0000-4000-8000-000000000002",
@@ -272,9 +328,19 @@
         "label": "102:45:39.9",
         "value": "5.4 Landing Dynamics"
       },
+      "locatorReview": {
+        "reviewedAt": "2026-07-16T20:30:00Z",
+        "reviewerRole": "deterministic package enhancer",
+        "status": "machine_checkable_metadata",
+        "supportsProposition": "not_semantically_verified"
+      },
       "rationale": "The source explicitly records the mission elapsed time.",
+      "sourceFamilyId": "fc_sfm_a686f98d-1926-4d16-8dc7-b46ce103136b",
       "sourceId": "fc_src_00000000-0000-4000-8000-000000000001",
-      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000001"
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000001",
+      "underlyingAssetIds": [
+        "fc_uast_d4553b5e-decb-44bb-857b-4bd48a9d6ec4"
+      ]
     },
     {
       "claimId": "fc_clm_00000000-0000-4000-8000-000000000003",
@@ -287,9 +353,19 @@
         "label": "102:45:43 / 20:17:43 GMT",
         "value": "Lunar Landing Time"
       },
+      "locatorReview": {
+        "reviewedAt": "2026-07-16T20:30:00Z",
+        "reviewerRole": "deterministic package enhancer",
+        "status": "machine_checkable_metadata",
+        "supportsProposition": "not_semantically_verified"
+      },
       "rationale": "The source explicitly records both mission elapsed and GMT time.",
+      "sourceFamilyId": "fc_sfm_a686f98d-1926-4d16-8dc7-b46ce103136b",
       "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
-      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000002"
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000002",
+      "underlyingAssetIds": [
+        "fc_uast_64b259f5-ec23-4171-8384-d7a61bd655f5"
+      ]
     },
     {
       "claimId": "fc_clm_00000000-0000-4000-8000-000000000004",
@@ -302,9 +378,19 @@
         "label": "109:24:15 / 02:56:15 GMT",
         "value": "Armstrong on Lunar Surface"
       },
+      "locatorReview": {
+        "reviewedAt": "2026-07-16T20:30:00Z",
+        "reviewerRole": "deterministic package enhancer",
+        "status": "machine_checkable_metadata",
+        "supportsProposition": "not_semantically_verified"
+      },
       "rationale": "The source explicitly records the first-step event time.",
+      "sourceFamilyId": "fc_sfm_a686f98d-1926-4d16-8dc7-b46ce103136b",
       "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
-      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000002"
+      "sourceSnapshotId": "fc_snap_00000000-0000-4000-8000-000000000002",
+      "underlyingAssetIds": [
+        "fc_uast_64b259f5-ec23-4171-8384-d7a61bd655f5"
+      ]
     }
   ],
   "claims": [
@@ -327,7 +413,9 @@
       ]
     },
     {
-      "confidenceAssessmentIds": [],
+      "confidenceAssessmentIds": [
+        "fc_conf_27974852-8bc4-4c3d-8c62-53a49c39fde2"
+      ],
       "createdAt": "2026-07-16T20:10:00Z",
       "currentRevisionId": "fc_clmr_00000000-0000-4000-8000-000000000002",
       "entityIds": [
@@ -341,7 +429,9 @@
       "unresolvedQuestions": []
     },
     {
-      "confidenceAssessmentIds": [],
+      "confidenceAssessmentIds": [
+        "fc_conf_0e414d27-339f-4892-8ed4-ac718c8094b2"
+      ],
       "createdAt": "2026-07-16T20:10:00Z",
       "currentRevisionId": "fc_clmr_00000000-0000-4000-8000-000000000003",
       "entityIds": [
@@ -355,7 +445,9 @@
       "unresolvedQuestions": []
     },
     {
-      "confidenceAssessmentIds": [],
+      "confidenceAssessmentIds": [
+        "fc_conf_f4e532f2-abb2-4fb4-8edd-8113f46f9cc6"
+      ],
       "createdAt": "2026-07-16T20:10:00Z",
       "currentRevisionId": "fc_clmr_00000000-0000-4000-8000-000000000004",
       "entityIds": [
@@ -373,12 +465,21 @@
     {
       "assessedAt": "2026-07-16T20:20:00Z",
       "assessorRole": "claims and status editor",
+      "calibrationType": "ordinal_not_statistical",
       "createdAt": "2026-07-16T20:20:00Z",
       "descriptor": "high",
+      "dimensions": {
+        "authority": 3,
+        "directness": 3,
+        "independence": 2,
+        "precision": 3,
+        "preservation": 1
+      },
       "id": "fc_cfd_00000000-0000-4000-8000-000000000001",
       "lowerBound": null,
       "method": "qualitative source convergence review",
       "rationale": "Two official NASA records expressly represent a landing event. They are not presumed independent, and the exact event second remains unresolved.",
+      "rubricVersion": "forensic-confidence-ordinal/2.0.0",
       "subjectId": "fc_clm_00000000-0000-4000-8000-000000000001",
       "subjectType": "claim",
       "uncertainty": [
@@ -386,6 +487,75 @@
         "Different reported mission elapsed seconds",
         "No independent clock-method review in this fixture"
       ],
+      "upperBound": null
+    },
+    {
+      "assessedAt": "2026-07-16T20:30:00Z",
+      "assessorRole": "deterministic package enhancer",
+      "calibrationType": "ordinal_not_statistical",
+      "createdAt": "2026-07-16T20:30:00Z",
+      "descriptor": "moderate",
+      "dimensions": {
+        "authority": 2,
+        "directness": 2,
+        "independence": 1,
+        "precision": 2,
+        "preservation": 1
+      },
+      "id": "fc_conf_0e414d27-339f-4892-8ed4-ac718c8094b2",
+      "lowerBound": null,
+      "method": "Ordinal review of authority, independence, precision, preservation, and directness.",
+      "rationale": "Backfilled to ensure complete claim-confidence coverage; requires substantive review before external use.",
+      "rubricVersion": "forensic-confidence-ordinal/2.0.0",
+      "subjectId": "fc_clm_00000000-0000-4000-8000-000000000003",
+      "subjectType": "claim",
+      "uncertainty": [],
+      "upperBound": null
+    },
+    {
+      "assessedAt": "2026-07-16T20:30:00Z",
+      "assessorRole": "deterministic package enhancer",
+      "calibrationType": "ordinal_not_statistical",
+      "createdAt": "2026-07-16T20:30:00Z",
+      "descriptor": "moderate",
+      "dimensions": {
+        "authority": 2,
+        "directness": 2,
+        "independence": 1,
+        "precision": 2,
+        "preservation": 1
+      },
+      "id": "fc_conf_27974852-8bc4-4c3d-8c62-53a49c39fde2",
+      "lowerBound": null,
+      "method": "Ordinal review of authority, independence, precision, preservation, and directness.",
+      "rationale": "Backfilled to ensure complete claim-confidence coverage; requires substantive review before external use.",
+      "rubricVersion": "forensic-confidence-ordinal/2.0.0",
+      "subjectId": "fc_clm_00000000-0000-4000-8000-000000000002",
+      "subjectType": "claim",
+      "uncertainty": [],
+      "upperBound": null
+    },
+    {
+      "assessedAt": "2026-07-16T20:30:00Z",
+      "assessorRole": "deterministic package enhancer",
+      "calibrationType": "ordinal_not_statistical",
+      "createdAt": "2026-07-16T20:30:00Z",
+      "descriptor": "moderate",
+      "dimensions": {
+        "authority": 2,
+        "directness": 2,
+        "independence": 1,
+        "precision": 2,
+        "preservation": 1
+      },
+      "id": "fc_conf_f4e532f2-abb2-4fb4-8edd-8113f46f9cc6",
+      "lowerBound": null,
+      "method": "Ordinal review of authority, independence, precision, preservation, and directness.",
+      "rationale": "Backfilled to ensure complete claim-confidence coverage; requires substantive review before external use.",
+      "rubricVersion": "forensic-confidence-ordinal/2.0.0",
+      "subjectId": "fc_clm_00000000-0000-4000-8000-000000000004",
+      "subjectType": "claim",
+      "uncertainty": [],
       "upperBound": null
     }
   ],
@@ -416,6 +586,7 @@
       "title": "Touchdown mission-time discrepancy"
     }
   ],
+  "correctionLedger": [],
   "corrections": [],
   "editorialReviews": [
     {
@@ -548,6 +719,24 @@
   "exportProfile": "private_workspace",
   "exportedAt": "2026-07-16T20:30:00Z",
   "exports": [],
+  "glossary": [
+    {
+      "definition": "Supported within the package by the strongest available source state; not a universal or judicial finding.",
+      "term": "Established"
+    },
+    {
+      "definition": "A proposition presented as a named source's claim rather than adopted as fact.",
+      "term": "Attributed"
+    },
+    {
+      "definition": "The source link and descriptive record are retained without the remote response body.",
+      "term": "Metadata-only"
+    },
+    {
+      "definition": "A relational visual model that is not metric, geodetic, ballistic, or photogrammetric.",
+      "term": "Schematic"
+    }
+  ],
   "importRuns": [
     {
       "createdAt": "2026-07-16T20:15:00Z",
@@ -559,6 +748,20 @@
       "toolVersion": "forensic-crawler-fixture/1.0.0"
     }
   ],
+  "integritySummary": {
+    "auditChainLinked": true,
+    "confidenceCoverage": true,
+    "evidentiaryAuthentication": "limited_metadata_only",
+    "locatorCoverage": true,
+    "signatureStatus": "unsigned_local_working_package",
+    "sourceBodiesNotPreserved": 3,
+    "sourceBodiesPreserved": 0,
+    "structuralValidation": "passed_v2_audit",
+    "warnings": [
+      "Internal consistency does not authenticate remote source content.",
+      "Human and tool actor identities are not cryptographically authenticated."
+    ]
+  },
   "interviews": [],
   "investigations": [
     {
@@ -577,6 +780,24 @@
       "updatedAt": "2026-07-16T20:30:00Z"
     }
   ],
+  "methodology": {
+    "exclusionRule": "No crawler execution, authenticated access, raw third-party body retention, publication, or unsupported identity, guilt, trajectory, or metric inference.",
+    "inclusionRule": "Public records and specifically reviewed metadata-only fixtures relevant to the defined investigation scope.",
+    "researchCutoff": "2026-07-16T20:30:00Z",
+    "scope": [
+      "Apollo 11 lunar landing timing",
+      "official NASA records only",
+      "metadata and restrained quotation only",
+      "no source-body retention"
+    ],
+    "sourceHierarchy": [
+      "preserved primary evidence",
+      "official record",
+      "independent reporting",
+      "attributed analysis",
+      "unresolved assertion"
+    ]
+  },
   "observations": [
     {
       "assetId": null,
@@ -651,7 +872,17 @@
       ]
     }
   ],
-  "packageId": "fc_pkg_00000000-0000-4000-8000-000000000001",
+  "packageId": "fc_pkg_b3f890b4-9a89-45b8-8101-35e42297bfe6",
+  "packageRevisions": [
+    {
+      "changeSummary": "Upgraded to the v2 provenance, confidence, integrity, reporting, and spatial-artifact contract.",
+      "createdAt": "2026-07-16T20:30:00Z",
+      "id": "fc_prev_888db468-702d-4553-814a-5d16e2d3a4c8",
+      "packageId": "fc_pkg_b3f890b4-9a89-45b8-8101-35e42297bfe6",
+      "previousPackageId": "fc_pkg_b3f890b4-9a89-45b8-8101-35e42297bfe6",
+      "revisionNumber": 1
+    }
+  ],
   "packageType": "forensic_workspace",
   "reconstructionElements": [
     {
@@ -763,7 +994,85 @@
       "subjectType": "asset"
     }
   ],
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
+  "sourceAcquisitions": [
+    {
+      "archiveUrls": [],
+      "byteLength": null,
+      "canonicalUrl": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf",
+      "contentHash": null,
+      "createdAt": "2026-07-16T20:30:00Z",
+      "durationMs": null,
+      "httpStatus": null,
+      "id": "fc_acq_5ed887b5-d97c-4047-8ff8-0556739211ca",
+      "limitations": "Manual locator review through an official web source; response status and remote bytes were not captured by an approved acquisition tool.",
+      "metadataHash": "23ea92e71181e92a182aa1be8a9b646e1fc18149ee25685f3ce2ff6e49f1dfb8",
+      "mimeType": null,
+      "redirectChain": [],
+      "requestedUrl": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf",
+      "responseHeaders": {},
+      "result": "not_fetched_by_policy",
+      "retrievalCompletedAt": "2026-07-16T20:00:00Z",
+      "retrievalMethod": "manual_metadata_registration",
+      "retrievalStartedAt": "2026-07-16T20:00:00Z",
+      "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000001",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "archiveUrls": [],
+      "byteLength": null,
+      "canonicalUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "contentHash": null,
+      "createdAt": "2026-07-16T20:30:00Z",
+      "durationMs": null,
+      "httpStatus": null,
+      "id": "fc_acq_7885b11d-5d5a-45aa-819c-cc291dbd8da8",
+      "limitations": "Policy metadata only; third-party and identifiable-person exceptions require item-specific review.",
+      "metadataHash": "0299cbae0aa26eede3ee0e2f018ea2a216b40c0133e1fbb2eb79e1d627bafe92",
+      "mimeType": null,
+      "redirectChain": [],
+      "requestedUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "responseHeaders": {},
+      "result": "not_fetched_by_policy",
+      "retrievalCompletedAt": "2026-07-16T20:00:00Z",
+      "retrievalMethod": "manual_metadata_registration",
+      "retrievalStartedAt": "2026-07-16T20:00:00Z",
+      "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000003",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000003"
+    },
+    {
+      "archiveUrls": [],
+      "byteLength": null,
+      "canonicalUrl": "https://www.nasa.gov/wp-content/uploads/static/history/ap11ann/ap11events.html",
+      "contentHash": null,
+      "createdAt": "2026-07-16T20:30:00Z",
+      "durationMs": null,
+      "httpStatus": null,
+      "id": "fc_acq_c8bc3258-a1b9-435f-8615-cead94e4ba3c",
+      "limitations": "Manual locator review; no remote body retained and no acquisition response metadata claimed.",
+      "metadataHash": "fa53b2ca5e6e1a1a06de30f08099485baea301a0ab52c2ed5456ad84c0e71e4b",
+      "mimeType": null,
+      "redirectChain": [],
+      "requestedUrl": "https://www.nasa.gov/wp-content/uploads/static/history/ap11ann/ap11events.html",
+      "responseHeaders": {},
+      "result": "not_fetched_by_policy",
+      "retrievalCompletedAt": "2026-07-16T20:00:00Z",
+      "retrievalMethod": "manual_metadata_registration",
+      "retrievalStartedAt": "2026-07-16T20:00:00Z",
+      "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000002",
+      "sourceId": "fc_src_00000000-0000-4000-8000-000000000002"
+    }
+  ],
+  "sourceFamilies": [
+    {
+      "createdAt": "2026-07-16T20:30:00Z",
+      "id": "fc_sfm_a686f98d-1926-4d16-8dc7-b46ce103136b",
+      "independenceRule": "Sources in this family are not counted as independent solely because they have distinct URLs.",
+      "label": "National Aeronautics and Space Administration",
+      "origin": "https://www.nasa.gov",
+      "publisher": "National Aeronautics and Space Administration"
+    }
+  ],
   "sourceRegistryEntries": [
     {
       "accessClass": "manual_metadata_only",
@@ -822,34 +1131,43 @@
   ],
   "sourceSnapshots": [
     {
+      "authenticationStatus": "body_not_preserved",
       "checkedAt": "2026-07-16T20:00:00Z",
       "contentHash": null,
       "createdAt": "2026-07-16T20:00:00Z",
       "httpStatus": null,
       "id": "fc_snap_00000000-0000-4000-8000-000000000001",
       "limitations": "Manual locator review through an official web source; response status and remote bytes were not captured by an approved acquisition tool.",
+      "metadataFingerprint": "23ea92e71181e92a182aa1be8a9b646e1fc18149ee25685f3ce2ff6e49f1dfb8",
+      "preservationState": "metadata_only",
       "sourceId": "fc_src_00000000-0000-4000-8000-000000000001",
       "storageState": "link_only",
       "url": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf"
     },
     {
+      "authenticationStatus": "body_not_preserved",
       "checkedAt": "2026-07-16T20:00:00Z",
       "contentHash": null,
       "createdAt": "2026-07-16T20:00:00Z",
       "httpStatus": null,
       "id": "fc_snap_00000000-0000-4000-8000-000000000002",
       "limitations": "Manual locator review; no remote body retained and no acquisition response metadata claimed.",
+      "metadataFingerprint": "fa53b2ca5e6e1a1a06de30f08099485baea301a0ab52c2ed5456ad84c0e71e4b",
+      "preservationState": "metadata_only",
       "sourceId": "fc_src_00000000-0000-4000-8000-000000000002",
       "storageState": "metadata_only",
       "url": "https://www.nasa.gov/wp-content/uploads/static/history/ap11ann/ap11events.html"
     },
     {
+      "authenticationStatus": "body_not_preserved",
       "checkedAt": "2026-07-16T20:00:00Z",
       "contentHash": null,
       "createdAt": "2026-07-16T20:00:00Z",
       "httpStatus": null,
       "id": "fc_snap_00000000-0000-4000-8000-000000000003",
       "limitations": "Policy metadata only; third-party and identifiable-person exceptions require item-specific review.",
+      "metadataFingerprint": "0299cbae0aa26eede3ee0e2f018ea2a216b40c0133e1fbb2eb79e1d627bafe92",
+      "preservationState": "metadata_only",
       "sourceId": "fc_src_00000000-0000-4000-8000-000000000003",
       "storageState": "metadata_only",
       "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
@@ -858,8 +1176,10 @@
   "sources": [
     {
       "author": null,
+      "authorityClass": "primary_official",
       "canonicalUrl": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf",
       "createdAt": "2026-07-16T20:00:00Z",
+      "freshnessStatus": "current_at_research_cutoff",
       "id": "fc_src_00000000-0000-4000-8000-000000000001",
       "lastCheckedAt": "2026-07-16T20:00:00Z",
       "locators": [
@@ -874,18 +1194,25 @@
           "value": "Report page 5-14"
         }
       ],
+      "preservationState": "metadata_only",
       "publishedAt": "1969-11",
       "publisher": "National Aeronautics and Space Administration",
       "registryEntryId": "fc_reg_00000000-0000-4000-8000-000000000001",
       "retrievedAt": "2026-07-16T20:00:00Z",
       "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000001",
+      "sourceFamilyId": "fc_sfm_a686f98d-1926-4d16-8dc7-b46ce103136b",
       "sourceType": "official_report",
-      "title": "Apollo 11 Mission Report"
+      "title": "Apollo 11 Mission Report",
+      "underlyingAssetIds": [
+        "fc_uast_d4553b5e-decb-44bb-857b-4bd48a9d6ec4"
+      ]
     },
     {
       "author": null,
+      "authorityClass": "primary_official",
       "canonicalUrl": "https://www.nasa.gov/wp-content/uploads/static/history/ap11ann/ap11events.html",
       "createdAt": "2026-07-16T20:00:00Z",
+      "freshnessStatus": "current_at_research_cutoff",
       "id": "fc_src_00000000-0000-4000-8000-000000000002",
       "lastCheckedAt": "2026-07-16T20:00:00Z",
       "locators": [
@@ -900,18 +1227,25 @@
           "value": "Armstrong on Lunar Surface"
         }
       ],
+      "preservationState": "metadata_only",
       "publishedAt": "1969-07-24",
       "publisher": "National Aeronautics and Space Administration",
       "registryEntryId": "fc_reg_00000000-0000-4000-8000-000000000002",
       "retrievedAt": "2026-07-16T20:00:00Z",
       "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000002",
+      "sourceFamilyId": "fc_sfm_a686f98d-1926-4d16-8dc7-b46ce103136b",
       "sourceType": "official_web_record",
-      "title": "Apollo 11 Record of Lunar Events"
+      "title": "Apollo 11 Record of Lunar Events",
+      "underlyingAssetIds": [
+        "fc_uast_64b259f5-ec23-4171-8384-d7a61bd655f5"
+      ]
     },
     {
       "author": null,
+      "authorityClass": "published_secondary",
       "canonicalUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "createdAt": "2026-07-16T20:00:00Z",
+      "freshnessStatus": "current_at_research_cutoff",
       "id": "fc_src_00000000-0000-4000-8000-000000000003",
       "lastCheckedAt": "2026-07-16T20:00:00Z",
       "locators": [
@@ -921,16 +1255,53 @@
           "value": "NASA Images and Media Usage Guidelines"
         }
       ],
+      "preservationState": "metadata_only",
       "publishedAt": null,
       "publisher": "National Aeronautics and Space Administration",
       "registryEntryId": "fc_reg_00000000-0000-4000-8000-000000000003",
       "retrievedAt": "2026-07-16T20:00:00Z",
       "rightsDecisionId": "fc_rgt_00000000-0000-4000-8000-000000000003",
+      "sourceFamilyId": "fc_sfm_a686f98d-1926-4d16-8dc7-b46ce103136b",
       "sourceType": "policy",
-      "title": "NASA Images and Media Usage Guidelines"
+      "title": "NASA Images and Media Usage Guidelines",
+      "underlyingAssetIds": [
+        "fc_uast_3aa18b8c-f5ee-420a-8764-88e95397d97f"
+      ]
     }
   ],
   "spatialAnchors": [],
+  "spatialArtifacts": [
+    {
+      "artifactType": "schematic_scene",
+      "coordinateSystem": "LOCAL_UNITLESS",
+      "createdAt": "2026-07-16T20:20:00Z",
+      "displayStatus": "schematic_only",
+      "georeferenced": false,
+      "id": "fc_spa_b9ed7cff-64e6-4a7a-85f0-5ad4b9ba5210",
+      "investigationId": "fc_inv_00000000-0000-4000-8000-000000000001",
+      "measurementEnabled": false,
+      "metricValidated": false,
+      "reconstructionRevisionId": "fc_recr_00000000-0000-4000-8000-000000000001",
+      "sourceCaptureIds": [
+        "fc_cap_00000000-0000-4000-8000-000000000002"
+      ],
+      "title": "Touchdown time comparison marker",
+      "toolchain": [
+        {
+          "configurationHash": "50a041110a6e1385626d189fa6e8377e5836446f35094d67b280d01b0ab327cb",
+          "name": "forensic-crawler-scene",
+          "version": "2.0.0"
+        }
+      ],
+      "units": "unitless",
+      "validation": {
+        "controlPointRmse": null,
+        "reprojectionErrorPx": null,
+        "residualReportPath": null,
+        "status": "not_metric"
+      }
+    }
+  ],
   "temporalAnchors": [
     {
       "conversionRationale": "Mission elapsed time converted arithmetically to seconds. Decimal precision reflects the source notation, not independently validated clock accuracy. UTC is not inferred from this record alone.",
@@ -991,6 +1362,58 @@
       "timeSystem": "mission_elapsed_time",
       "uncertaintyLowerSeconds": 0.5,
       "uncertaintyUpperSeconds": 0.5
+    }
+  ],
+  "transformationLedger": [
+    {
+      "configurationHash": "c1b600fd2487300f53e74bffcc12b429225eff69a0ba28c09e9f054d1e13e210",
+      "deterministic": true,
+      "executedAt": "2026-07-16T20:15:01Z",
+      "id": "fc_tlog_e70537c1-8dcb-4185-8614-7ec6ab95c88f",
+      "inputCaptureIds": [
+        "fc_cap_00000000-0000-4000-8000-000000000001"
+      ],
+      "method": "sort object keys and ID-bearing arrays; preserve numeric values",
+      "outputCaptureIds": [
+        "fc_cap_00000000-0000-4000-8000-000000000002"
+      ],
+      "softwareVersion": "forensic-crawler-canonical-json/1.0.0",
+      "transformationId": "fc_xfm_00000000-0000-4000-8000-000000000001"
+    }
+  ],
+  "underlyingAssets": [
+    {
+      "assetClass": "web_record",
+      "createdAt": "2026-07-16T20:30:00Z",
+      "derivativeRelationship": "registered_source",
+      "id": "fc_uast_3aa18b8c-f5ee-420a-8764-88e95397d97f",
+      "label": "NASA Images and Media Usage Guidelines — underlying public record",
+      "preservationState": "metadata_only",
+      "sourceIds": [
+        "fc_src_00000000-0000-4000-8000-000000000003"
+      ]
+    },
+    {
+      "assetClass": "web_record",
+      "createdAt": "2026-07-16T20:30:00Z",
+      "derivativeRelationship": "registered_source",
+      "id": "fc_uast_64b259f5-ec23-4171-8384-d7a61bd655f5",
+      "label": "Apollo 11 Record of Lunar Events — underlying public record",
+      "preservationState": "metadata_only",
+      "sourceIds": [
+        "fc_src_00000000-0000-4000-8000-000000000002"
+      ]
+    },
+    {
+      "assetClass": "document",
+      "createdAt": "2026-07-16T20:30:00Z",
+      "derivativeRelationship": "registered_source",
+      "id": "fc_uast_d4553b5e-decb-44bb-857b-4bd48a9d6ec4",
+      "label": "Apollo 11 Mission Report — underlying public record",
+      "preservationState": "metadata_only",
+      "sourceIds": [
+        "fc_src_00000000-0000-4000-8000-000000000001"
+      ]
     }
   ]
 }

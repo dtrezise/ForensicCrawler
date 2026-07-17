@@ -31,7 +31,7 @@ These are historical WORKING requirements, not proof that the features are feasi
 
 - Every CivicLedger system summary, implementation claim, data model, financial-disclosure example, route name, and product insight is foreign to this project.
 - Conversation UI, assistant suggestions, Finder advice, financial estimates, market sizing, and competitive superlatives are historical context, not verified requirements.
-- The Charlie Kirk example is not a pilot dataset and is not treated as a verified event description.
+- At starting-source reconciliation on 2026-07-16, the Charlie Kirk example was not imported as a pilot dataset or verified event description. The project owner's separate 2026-07-17 request supersedes that pilot decision for a new, independently researched public-record fixture; no unsupported event description from the starting PDFs is imported.
 - No TDS content, case data, political position, religious analysis, grievance, identity, terminology, or brand material is imported.
 
 ## Historical proposals requiring correction or validation
@@ -53,6 +53,8 @@ These are historical WORKING requirements, not proof that the features are feasi
 - deterministic, versioned JSON packages before database lock-in;
 - separate source facts, observations, claims, inferences, annotations, and reconstruction elements;
 - metadata-only Apollo 11 landing-time pilot using official NASA records and no copied raw PDF;
+- separately authorized Charlie Kirk public-record fixture using exact locators, restrained paraphrases, procedural labels, and project-authored schematic geometry with no copied source pixels;
+- separately authorized Renee Good public-record fixture using exact locators, restrained paraphrases, uncharged/open-investigation labels, response chronology, and project-authored qualitative street geometry with no copied source pixels;
 - provider-neutral React/Vite local workspace, with future PostgreSQL/PostGIS and isolated Python workers;
 - deny-by-default network architecture, even though no crawler network code is enabled in this phase; and
 - automated schema, reference, rights, provenance, export, and interface checks.

@@ -1,0 +1,18 @@
+{
+  "benchmarkId": "controlled-spatial-v1",
+  "colmap": {
+    "available": false,
+    "commandTemplate": "colmap automatic_reconstructor --workspace_path <workspace> --image_path <workspace>/images --data_type INDIVIDUAL --quality HIGH",
+    "executionState": "not_installed_local_environment",
+    "networkInstallAttempted": false
+  },
+  "fallbackValidation": {
+    "engine": "opencv_solvepnp_and_triangulation",
+    "measurementEnabled": true,
+    "status": "passed",
+    "triangulationRmseMeters": 0.0015174234772470786
+  },
+  "generatedAt": "2026-07-17T17:35:04.737Z",
+  "rule": "COLMAP output may supplement but cannot replace case-specific scale control, residual reporting, and independent validation.",
+  "schemaVersion": "1.0.0"
+}
